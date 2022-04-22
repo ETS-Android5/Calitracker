@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,11 +27,12 @@ import java.util.Objects;
 public class Sign_Up extends AppCompatActivity {
 EditText SignUpMail,SignUpPass,SignUpName,SignUpLastName,SignUpDateOfBirth;
 Button SignUpButton;
+ImageView GoBackArrow;
 private FirebaseAuth auth;
 
 
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint({"ClickableViewAccessibility", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,16 @@ private FirebaseAuth auth;
         SignUpName = findViewById(R.id.first_name_editbox);
         SignUpLastName = findViewById(R.id.last_name_editbox);
         SignUpDateOfBirth = findViewById(R.id.date_editbox);
+        GoBackArrow = findViewById(R.id.go_back_arrow);
+
+        GoBackArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Sign_Up.this, LoginScreen.class));
+                overridePendingTransition(R.anim.push_down_out,R.anim.push_down_in);
+                finish();
+            }
+        });
 
         SignUpMail.setOnTouchListener(new View.OnTouchListener() {
             @Override
