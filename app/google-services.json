@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "245047574164-hes5nbchlg9tpt0tkk05fnabl8t4uf6s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.calitracker",
+            "certificate_hash": "6b49b7db639d6a2bece7da9607621497ff0579d4"
+          }
+        },
+        {
           "client_id": "245047574164-r5p35ctcesb8mfqttjqn02v46ddt5h26.apps.googleusercontent.com",
           "client_type": 3
         }

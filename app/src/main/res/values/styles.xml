@@ -29,4 +29,25 @@
 
     </style>
 
+    <style name="fill_box">
+        <item name="android:layout_width">384dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_marginTop">29dp</item>
+        <item name="android:layout_marginBottom">366dp</item>
+        <item name="android:background">@drawable/border</item>
+        <item name="android:ems">10</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="fill_box_textview">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
 </resources>

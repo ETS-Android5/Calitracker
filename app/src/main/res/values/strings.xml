@@ -3,4 +3,20 @@
     <string name="calitracker">CALITRACKER</string>
     <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="title_activity_sign_up">Sign_Up</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name">LAST NAME</string>
+    <string name="email">EMAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="date_of_birth">DATE OF BIRTH</string>
+    <string name="calitracker_logo">Calitracker logo</string>
+    <string name="create_account">CREATE ACCOUNT</string>
 </resources>

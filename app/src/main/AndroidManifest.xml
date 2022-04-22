@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calitracker">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Sign_Up"
+            android:exported="false" />
+        <activity
             android:name=".LoginScreen"
             android:exported="false" />
         <activity
