@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "245047574164",
+    "project_id": "calitracker-acbd6",
+    "storage_bucket": "calitracker-acbd6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245047574164:android:b97c3f548d011a0c6f7e81",
+        "android_client_info": {
+          "package_name": "com.example.calitracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245047574164-r5p35ctcesb8mfqttjqn02v46ddt5h26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM5sFtl5lVCkos0qrfnPya-u44h05QMuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245047574164-r5p35ctcesb8mfqttjqn02v46ddt5h26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
