@@ -22,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(HomeActivity.this, LoginScreen.class);
                 startActivity(intent);
             }
