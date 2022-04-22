@@ -139,6 +139,10 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:autofillHints=""
         android:ems="10"
         android:inputType="date"
@@ -216,7 +220,7 @@
                 android:layout_width="30dp"
                 android:layout_height="26dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
                 app:srcCompat="@drawable/ic_strzalka" />
 
             <TextView
@@ -225,8 +229,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="30dp"
-                android:text="CREATE AN ACCOUNT" />
+                android:layout_marginStart="30dp"
+                android:text="@string/create_an_account" />
         </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>

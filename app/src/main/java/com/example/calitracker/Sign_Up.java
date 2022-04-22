@@ -1,6 +1,7 @@
 package com.example.calitracker;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -22,6 +24,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Sign_Up extends AppCompatActivity {
@@ -29,6 +34,7 @@ EditText SignUpMail,SignUpPass,SignUpName,SignUpLastName,SignUpDateOfBirth;
 Button SignUpButton;
 ImageView GoBackArrow;
 private FirebaseAuth auth;
+final Calendar myCalendar = Calendar.getInstance();
 
 
 
@@ -37,6 +43,17 @@ private FirebaseAuth auth;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, day);
+                updateLabel();
+            }
+        };
+
+
         Objects.requireNonNull(getSupportActionBar()).hide();
         auth = FirebaseAuth.getInstance();
         SignUpButton = findViewById(R.id.create_Account);
@@ -113,7 +130,17 @@ private FirebaseAuth auth;
                 SignUpLastName.setBackgroundResource(R.drawable.border);
                 SignUpPass.setBackgroundResource(R.drawable.border);
                 SignUpDateOfBirth.setBackgroundResource(R.drawable.border_black);
+                SignUpDateOfBirth.setShowSoftInputOnFocus(false);
                 return false;
+            }
+        });
+
+        SignUpDateOfBirth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(Sign_Up.this,date,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
+                        .show();
             }
         });
 
@@ -184,5 +211,10 @@ private FirebaseAuth auth;
 
 
     }
+    private void updateLabel(){
+        String myFormat = "dd/MM/yy";
+        SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.ENGLISH);
+        SignUpDateOfBirth.setText(dateFormat.format(myCalendar.getTime()));
 
+    }
 }

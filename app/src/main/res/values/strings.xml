@@ -19,4 +19,5 @@
     <string name="date_of_birth">DATE OF BIRTH</string>
     <string name="calitracker_logo">Calitracker logo</string>
     <string name="create_account">CREATE ACCOUNT</string>
+    <string name="create_an_account">CREATE AN ACCOUNT</string>
 </resources>
