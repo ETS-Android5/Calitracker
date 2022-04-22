@@ -51,7 +51,6 @@ private FirebaseAuth auth;
                 String lastName = SignUpLastName.getText().toString();
                 String dateOfBirth = SignUpDateOfBirth.getText().toString();
 
-
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(getApplicationContext(),
                             "Please enter your E-mail address",Toast.LENGTH_LONG).show();
