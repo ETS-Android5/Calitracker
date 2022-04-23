@@ -123,6 +123,7 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String emailAddress = LogInMail.getText().toString();
+                view.startAnimation(buttonClick);
                 if(TextUtils.isEmpty(emailAddress)){
                     Toast.makeText(LogIn.this,
                             "Please provide email",

@@ -5,20 +5,28 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 public class Sign_Up extends AppCompatActivity {
@@ -28,7 +36,7 @@ ImageView GoBackArrow;
 private FirebaseAuth auth;
 final Calendar myCalendar = Calendar.getInstance();
 private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
-
+FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @SuppressLint({"ClickableViewAccessibility", "WrongViewCast"})
     @Override
@@ -123,8 +131,6 @@ private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
             String dateOfBirth = SignUpDateOfBirth.getText().toString();
 
 
-
-
             if(TextUtils.isEmpty(email)){
                 Toast.makeText(getApplicationContext(),
                         "Please enter your E-mail address",Toast.LENGTH_SHORT).show();
@@ -177,6 +183,29 @@ private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
                                         FirebaseUser user = auth.getCurrentUser();
                                         user.sendEmailVerification();
 
+                                        Map<String, Object> user1 = new HashMap<>();
+                                        user1.put("FirstName", name);
+                                        user1.put("LastName", lastName);
+                                        user1.put("Email", email);
+                                        user1.put("DateOfBirth", dateOfBirth);
+                                        db.collection("users").add(user1)
+                                                .addOnSuccessListener
+                                                        (new OnSuccessListener<DocumentReference>()
+                                                        {
+                                                    @Override
+                                                    public void onSuccess
+                                                            (DocumentReference documentReference) {
+                                                        Log.d("TAG", "DocumentSnapshot" +
+                                                                " added with ID: " +
+                                                                documentReference.getId());
+                                                    }
+                                                }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.w("TAG", "Error adding document", e);
+                                            }
+                                        });
+
                                             startActivity(new Intent(Sign_Up.this,
                                                     EmailVerification.class));
                                             overridePendingTransition(R.anim.slide_in,
@@ -187,6 +216,8 @@ private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
             }
         });
+
+
 
 
 
