@@ -3,30 +3,20 @@ package com.example.calitracker;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import com.example.calitracker.databinding.ActivitySignUpBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Objects;
@@ -37,7 +27,7 @@ Button SignUpButton;
 ImageView GoBackArrow;
 private FirebaseAuth auth;
 final Calendar myCalendar = Calendar.getInstance();
-
+private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
 
     @SuppressLint({"ClickableViewAccessibility", "WrongViewCast"})
@@ -45,14 +35,11 @@ final Calendar myCalendar = Calendar.getInstance();
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int day) {
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, month);
-                myCalendar.set(Calendar.DAY_OF_MONTH, day);
-                updateLabel();
-            }
+        DatePickerDialog.OnDateSetListener date = (view, year, month, day) -> {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, month);
+            myCalendar.set(Calendar.DAY_OF_MONTH, day);
+            updateLabel();
         };
 
 
@@ -66,149 +53,139 @@ final Calendar myCalendar = Calendar.getInstance();
         SignUpDateOfBirth = findViewById(R.id.date_editbox);
         GoBackArrow = findViewById(R.id.go_back_arrow);
 
-        GoBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Sign_Up.this, LoginScreen.class));
-                overridePendingTransition(R.anim.push_down_out,R.anim.push_down_in);
-                finish();
-            }
+        GoBackArrow.setOnClickListener(view -> {
+            view.startAnimation(buttonClick);
+            startActivity(new Intent(Sign_Up.this, LoginScreen.class));
+            overridePendingTransition(R.anim.push_down_out,R.anim.push_down_in);
+            finish();
         });
 
-        SignUpMail.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                SignUpMail.setBackgroundResource(R.drawable.border_black);
-                SignUpName.setBackgroundResource(R.drawable.border);
-                SignUpLastName.setBackgroundResource(R.drawable.border);
-                SignUpPass.setBackgroundResource(R.drawable.border);
-                SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
+        SignUpMail.setOnTouchListener((view, motionEvent) -> {
+            SignUpMail.setBackgroundResource(R.drawable.border_black);
+            SignUpName.setBackgroundResource(R.drawable.border);
+            SignUpLastName.setBackgroundResource(R.drawable.border);
+            SignUpPass.setBackgroundResource(R.drawable.border);
+            SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
 
-                return false;
-            }
+            return false;
         });
 
-        SignUpPass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                SignUpMail.setBackgroundResource(R.drawable.border);
-                SignUpName.setBackgroundResource(R.drawable.border);
-                SignUpLastName.setBackgroundResource(R.drawable.border);
-                SignUpPass.setBackgroundResource(R.drawable.border_black);
-                SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
-                return false;
-            }
+        SignUpPass.setOnTouchListener((view, motionEvent) -> {
+            SignUpMail.setBackgroundResource(R.drawable.border);
+            SignUpName.setBackgroundResource(R.drawable.border);
+            SignUpLastName.setBackgroundResource(R.drawable.border);
+            SignUpPass.setBackgroundResource(R.drawable.border_black);
+            SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
+            return false;
         });
 
-        SignUpName.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                SignUpMail.setBackgroundResource(R.drawable.border);
-                SignUpName.setBackgroundResource(R.drawable.border_black);
-                SignUpLastName.setBackgroundResource(R.drawable.border);
-                SignUpPass.setBackgroundResource(R.drawable.border);
-                SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
-                return false;
-            }
+        SignUpName.setOnTouchListener((view, motionEvent) -> {
+            SignUpMail.setBackgroundResource(R.drawable.border);
+            SignUpName.setBackgroundResource(R.drawable.border_black);
+            SignUpLastName.setBackgroundResource(R.drawable.border);
+            SignUpPass.setBackgroundResource(R.drawable.border);
+            SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
+            return false;
         });
 
-        SignUpLastName.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                SignUpMail.setBackgroundResource(R.drawable.border);
-                SignUpName.setBackgroundResource(R.drawable.border);
-                SignUpLastName.setBackgroundResource(R.drawable.border_black);
-                SignUpPass.setBackgroundResource(R.drawable.border);
-                SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
-                return false;
-            }
+        SignUpLastName.setOnTouchListener((view, motionEvent) -> {
+            SignUpMail.setBackgroundResource(R.drawable.border);
+            SignUpName.setBackgroundResource(R.drawable.border);
+            SignUpLastName.setBackgroundResource(R.drawable.border_black);
+            SignUpPass.setBackgroundResource(R.drawable.border);
+            SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
+            return false;
         });
 
-        SignUpDateOfBirth.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                SignUpMail.setBackgroundResource(R.drawable.border);
-                SignUpName.setBackgroundResource(R.drawable.border);
-                SignUpLastName.setBackgroundResource(R.drawable.border);
-                SignUpPass.setBackgroundResource(R.drawable.border);
-                SignUpDateOfBirth.setBackgroundResource(R.drawable.border_black);
-                SignUpDateOfBirth.setShowSoftInputOnFocus(false);
-                return false;
-            }
+        SignUpDateOfBirth.setOnTouchListener((view, motionEvent) -> {
+            SignUpMail.setBackgroundResource(R.drawable.border);
+            SignUpName.setBackgroundResource(R.drawable.border);
+            SignUpLastName.setBackgroundResource(R.drawable.border);
+            SignUpPass.setBackgroundResource(R.drawable.border);
+            SignUpDateOfBirth.setBackgroundResource(R.drawable.border_black);
+            SignUpDateOfBirth.setShowSoftInputOnFocus(false);
+            return false;
         });
 
-        SignUpDateOfBirth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new DatePickerDialog(Sign_Up.this,date,myCalendar.get(Calendar.YEAR),
-                        myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
-                        .show();
+        SignUpDateOfBirth.setOnClickListener(view -> new DatePickerDialog(Sign_Up
+                .this,date,myCalendar.get(Calendar.YEAR),
+                myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
+                .show());
+
+
+        // After clicking a "create account" button, it creates a new user.
+        SignUpButton.setOnClickListener(view -> {
+
+            String email = SignUpMail.getText().toString();
+            String pass = SignUpPass.getText().toString();
+            String name = SignUpName.getText().toString();
+            String lastName = SignUpLastName.getText().toString();
+            String dateOfBirth = SignUpDateOfBirth.getText().toString();
+
+
+
+
+            if(TextUtils.isEmpty(email)){
+                Toast.makeText(getApplicationContext(),
+                        "Please enter your E-mail address",Toast.LENGTH_SHORT).show();
+
             }
-        });
+            if(TextUtils.isEmpty(pass)){
+                Toast.makeText(getApplicationContext(),
+                        "Please enter your Password",Toast.LENGTH_SHORT).show();
+
+            }
+            if(pass.length() == 0){
+                Toast.makeText(getApplicationContext(),
+                        "Please enter your Password",Toast.LENGTH_SHORT).show();
+
+            }
+            if(pass.length() < 8 ){
+                Toast.makeText(getApplicationContext(),
+                        "Password must be longer than 8 digits",Toast.LENGTH_SHORT).show();
+
+            }
+            if(TextUtils.isDigitsOnly(pass)){
+                Toast.makeText(getApplicationContext(),
+                        "Password must include letters",Toast.LENGTH_SHORT).show();
+            }
+            if(TextUtils.isEmpty(name)){
+                Toast.makeText(getApplicationContext(),
+                        "Please provide name",Toast.LENGTH_SHORT).show();
+            }
+
+            if(TextUtils.isEmpty(lastName)){
+                Toast.makeText(getApplicationContext(),
+                        "Please provide last name",Toast.LENGTH_SHORT).show();
+            }
+
+            if(TextUtils.isEmpty(dateOfBirth)){
+                Toast.makeText(getApplicationContext(),
+                        "Please provide date of birth",Toast.LENGTH_SHORT).show();
+            }
 
 
 
-        SignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            // After clicking a "create account" button, it creates a new user.
-            public void onClick(View view) {
-
-                String email = SignUpMail.getText().toString();
-                String pass = SignUpPass.getText().toString();
-                String name = SignUpName.getText().toString();
-                String lastName = SignUpLastName.getText().toString();
-                String dateOfBirth = SignUpDateOfBirth.getText().toString();
-                LocalDate date = LocalDate.now();
-
-
-
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(getApplicationContext(),
-                            "Please enter your E-mail address",Toast.LENGTH_LONG).show();
-
-                }
-                if(TextUtils.isEmpty(pass)){
-                    Toast.makeText(getApplicationContext(),
-                            "Please enter your Password",Toast.LENGTH_LONG).show();
-
-                }
-                if(pass.length() == 0){
-                    Toast.makeText(getApplicationContext(),
-                            "Please enter your Password",Toast.LENGTH_LONG).show();
-
-                }
-                if(pass.length() < 8 ){
-                    Toast.makeText(getApplicationContext(),
-                            "Password must be longer than 8 digits",Toast.LENGTH_LONG).show();
-
-                }
-
-
-                else{
-                    auth.createUserWithEmailAndPassword(email,pass)
-                            .addOnCompleteListener(Sign_Up.this,
-                                    new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
+            else{
+                auth.createUserWithEmailAndPassword(email,pass)
+                        .addOnCompleteListener(Sign_Up.this,
+                                task -> {
                                     if (!task.isSuccessful()){
                                         Toast.makeText(Sign_Up.this, "ERROR", Toast
-                                        .LENGTH_LONG).show();
+                                        .LENGTH_SHORT).show();
                                     }else{
-                                        startActivity(new Intent(Sign_Up.this,
-                                                HomeActivity.class));
-                                        finish();
+                                        FirebaseUser user = auth.getCurrentUser();
+                                        user.sendEmailVerification();
+
+                                            startActivity(new Intent(Sign_Up.this,
+                                                    EmailVerification.class));
+                                            overridePendingTransition(R.anim.slide_in,
+                                                    R.anim.slide_in);
+
                                     }
-                                }
-                            });
-                }
+                                });
+
             }
-
-
-
-
-
-
         });
 
 
