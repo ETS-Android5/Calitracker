@@ -2,8 +2,11 @@ package com.example.calitracker;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.animation.AlphaAnimation;
@@ -15,10 +18,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.calitracker.Model.EmailAndPass;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -29,7 +34,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
+
 public class Sign_Up extends AppCompatActivity {
+
+
 EditText SignUpMail,SignUpPass,SignUpName,SignUpLastName,SignUpDateOfBirth;
 Button SignUpButton;
 ImageView GoBackArrow;
@@ -38,7 +46,10 @@ final Calendar myCalendar = Calendar.getInstance();
 private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
+
     @SuppressLint({"ClickableViewAccessibility", "WrongViewCast"})
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +71,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
         SignUpLastName = findViewById(R.id.last_name_editbox);
         SignUpDateOfBirth = findViewById(R.id.date_editbox);
         GoBackArrow = findViewById(R.id.go_back_arrow);
+
 
         GoBackArrow.setOnClickListener(view -> {
             view.startAnimation(buttonClick);
@@ -131,6 +143,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
             String dateOfBirth = SignUpDateOfBirth.getText().toString();
 
 
+
             if(TextUtils.isEmpty(email)){
                 Toast.makeText(getApplicationContext(),
                         "Please enter your E-mail address",Toast.LENGTH_SHORT).show();
@@ -181,6 +194,11 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                                         .LENGTH_SHORT).show();
                                     }else{
                                         FirebaseUser user = auth.getCurrentUser();
+                                        EmailAndPass.email = email;
+                                        EmailAndPass.pass = pass;
+
+
+
                                         user.sendEmailVerification();
 
                                         Map<String, Object> user1 = new HashMap<>();
@@ -188,23 +206,10 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                                         user1.put("LastName", lastName);
                                         user1.put("Email", email);
                                         user1.put("DateOfBirth", dateOfBirth);
-                                        db.collection("users").add(user1)
-                                                .addOnSuccessListener
-                                                        (new OnSuccessListener<DocumentReference>()
-                                                        {
-                                                    @Override
-                                                    public void onSuccess
-                                                            (DocumentReference documentReference) {
-                                                        Log.d("TAG", "DocumentSnapshot" +
-                                                                " added with ID: " +
-                                                                documentReference.getId());
-                                                    }
-                                                }).addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Log.w("TAG", "Error adding document", e);
-                                            }
-                                        });
+                                        db.collection("users").document(user.getUid())
+                                                .set(user1);
+
+
 
                                             startActivity(new Intent(Sign_Up.this,
                                                     EmailVerification.class));
@@ -231,6 +236,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
         String myFormat = "dd/MM/yy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.ENGLISH);
         SignUpDateOfBirth.setText(dateFormat.format(myCalendar.getTime()));
+
 
     }
 }

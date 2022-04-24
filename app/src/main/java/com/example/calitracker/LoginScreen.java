@@ -24,6 +24,7 @@ public class LoginScreen extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
 
 
+
         // sign up button listener
         Button sign_up_button = findViewById(R.id.sign_up_button);
         Button log_in_button = findViewById(R.id.log_in_button);

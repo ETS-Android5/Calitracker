@@ -25,7 +25,7 @@ Button verifiedButton;
             public void onClick(View view) {
 
                 startActivity(new Intent(EmailVerification.this,
-                        LogIn.class));
+                        SignUpSelectGender.class));
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_in);
             }
         });

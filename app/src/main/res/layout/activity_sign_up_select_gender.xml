@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1D1D1B"
+    tools:context=".SignUpSelectGender">
+
+    <TextView
+        android:id="@+id/female_textview"
+        style="@style/fill_box_textview"
+        android:layout_width="150dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/border"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:shadowRadius="0"
+        android:text="FEMALE"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/male_textview"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <TextView
+        android:id="@+id/male_textview"
+        style="@style/fill_box_textview"
+        android:layout_width="150dp"
+        android:layout_height="44dp"
+        android:background="@drawable/border"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:shadowDx="-2"
+        android:shadowRadius="0"
+        android:text="MALE"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/female_textview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <TextView
+        android:id="@+id/prefer_not_to_say_textview"
+        style="@style/thin_roboto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:text="PREFER NOT TO SAY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/fill_box_textview"
+        android:layout_width="173dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="SELECT YOUR GENDER PREFERENCE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <TextView
+        android:id="@+id/next_textview"
+        style="@style/thin_roboto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="NEXT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985" />
+
+    <TextView
+        android:id="@+id/textView11"
+        style="@style/sign_up_layout_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="2/4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prefer_not_to_say_textview"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/female_textview"
+        app:layout_constraintEnd_toEndOf="@+id/female_textview"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/female_textview"
+        app:layout_constraintTop_toTopOf="@+id/female_textview"
+        app:layout_constraintVertical_bias="0.529"
+        app:srcCompat="@drawable/ic_female_symbol" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/male_textview"
+        app:layout_constraintEnd_toEndOf="@+id/male_textview"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/male_textview"
+        app:layout_constraintTop_toTopOf="@+id/male_textview"
+        app:layout_constraintVertical_bias="0.529"
+        app:srcCompat="@drawable/ic_male_symbol" />
+</androidx.constraintlayout.widget.ConstraintLayout>
