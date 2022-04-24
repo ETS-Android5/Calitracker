@@ -1,10 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1D1D1B"
     tools:context=".SignUpSelectMetric">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <TextView
+      android:id="@+id/textView10"
+      style="@style/fill_box_textview"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:text="SELECT YOUR METRIC"
+      android:textSize="18sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.497"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/textView12"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/roboto"
+      android:gravity="center"
+      android:text="Do you lift in KGs or LBs? Select the metric you're used to and we’ll  display your weights that way."
+      android:textColor="@color/white"
+      android:textSize="13dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.123" />
+
+  <TextView
+      android:id="@+id/textView14"
+      style="@style/fill_box_textview"
+      android:layout_width="150dp"
+      android:layout_height="44dp"
+      android:layout_marginEnd="50dp"
+      android:background="@drawable/border"
+      android:gravity="center"
+      android:text="Kg"
+      android:textSize="12dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/textView15"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.232" />
+
+  <TextView
+      android:id="@+id/textView15"
+      style="@style/fill_box_textview"
+      android:layout_width="150dp"
+      android:layout_height="44dp"
+      android:background="@drawable/border"
+      android:gravity="center"
+      android:text="Lb"
+      android:textSize="12dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toEndOf="@+id/textView14"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.232" />
+
+  <TextView
+      android:id="@+id/textView16"
+      style="@style/thin_roboto"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:layout_marginBottom="10dp"
+      android:fontFamily="@font/roboto_bold"
+      android:text="BACK"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/textView18"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+      android:id="@+id/textView17"
+      style="@style/thin_roboto"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="10dp"
+      android:fontFamily="@font/roboto_bold"
+      android:text="NEXT"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toEndOf="@+id/textView18"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+      android:id="@+id/textView18"
+      style="@style/sign_up_layout_counter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      android:text="3/4"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+      android:id="@+id/textView19"
+      style="@style/thin_roboto"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="SKIP"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.958"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.022" />
+</androidx.constraintlayout.widget.ConstraintLayout>
