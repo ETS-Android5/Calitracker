@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -14,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,18 +39,6 @@ public class SignUpPushNotifications extends AppCompatActivity {
         mySwitch = findViewById(R.id.push_notif_switch);
         auth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
-        Map<String, Object> pushNotif = new HashMap<>();
-        pushNotif.put("Notifications", false);
-
-        auth.signInWithEmailAndPassword(EmailAndPass.email,EmailAndPass.pass);
-        FirebaseUser user = auth.getCurrentUser();
-        DocumentReference pushRef = db.collection("users").
-                document(user.getUid());
-
-        pushRef.update(pushNotif);
-
 
 
         goBack.setOnClickListener(new View.OnClickListener() {
@@ -83,9 +73,15 @@ public class SignUpPushNotifications extends AppCompatActivity {
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                String topic = "PushNotifications";
 
                 if(isChecked) {
-                    Map<String, Object> pushNotif = new HashMap<>();
+
+                    FirebaseMessaging.getInstance().subscribeToTopic(topic);
+                    Log.d("subscribed", "subscribed: yes ");
+
+
+                   /* Map<String, Object> pushNotif = new HashMap<>();
                     pushNotif.put("Notifications", true);
 
                     auth.signInWithEmailAndPassword(EmailAndPass.email, EmailAndPass.pass);
@@ -93,9 +89,13 @@ public class SignUpPushNotifications extends AppCompatActivity {
                     DocumentReference pushRef = db.collection("users").
                             document(user.getUid());
 
-                    pushRef.update(pushNotif);
+                    pushRef.update(pushNotif);*/
                 }else{
-                    Map<String, Object> pushNotif = new HashMap<>();
+
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic(topic);
+                    Log.d("subscribed", "subscribed: no ");
+
+                    /*Map<String, Object> pushNotif = new HashMap<>();
                     pushNotif.put("Notifications", false);
 
                     auth.signInWithEmailAndPassword(EmailAndPass.email,EmailAndPass.pass);
@@ -103,7 +103,7 @@ public class SignUpPushNotifications extends AppCompatActivity {
                     DocumentReference pushRef = db.collection("users").
                             document(user.getUid());
 
-                    pushRef.update(pushNotif);
+                    pushRef.update(pushNotif);*/
                 }
 
             }

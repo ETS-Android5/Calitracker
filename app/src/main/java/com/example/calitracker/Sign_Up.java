@@ -159,9 +159,9 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                         "Please enter your Password",Toast.LENGTH_SHORT).show();
 
             }
-            if(pass.length() < 8 ){
+            if(pass.length() < 6 ){
                 Toast.makeText(getApplicationContext(),
-                        "Password must be longer than 8 digits",Toast.LENGTH_SHORT).show();
+                        "Password must have at least 6 digits",Toast.LENGTH_SHORT).show();
 
             }
             if(TextUtils.isDigitsOnly(pass)){
