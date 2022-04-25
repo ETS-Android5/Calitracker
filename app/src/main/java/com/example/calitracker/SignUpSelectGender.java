@@ -39,6 +39,8 @@ public class SignUpSelectGender extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
 
+
+
         preferNotToSay = findViewById(R.id.prefer_not_to_say_textview);
         nextTextView = findViewById(R.id.next_textview);
         femaleTextView = findViewById(R.id.female_textview);
