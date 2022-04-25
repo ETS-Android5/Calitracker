@@ -16,8 +16,10 @@
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_login_screen.xml" value="0.313969571230982" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_end.xml" value="0.33" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_push_notifications.xml" value="0.5" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_select_gender.xml" value="0.5" />
-        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_select_metric.xml" value="0.5" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_select_metric.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/content_sign_up.xml" value="0.3532608695652174" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fill_box_layout.xml" value="0.3532608695652174" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/sign_up.xml" value="0.3532608695652174" />

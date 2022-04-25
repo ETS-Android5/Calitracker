@@ -3,6 +3,7 @@ package com.example.calitracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,15 +38,29 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
                 finish();
 
-            }, 600);
+            }, 0);
 
         }
         // if user already has an account, navigate to home activity
-        if (firebaseUser != null) {
+        if (firebaseUser != null && firebaseUser.isEmailVerified()) {
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
             finish();
         }
+
+        if(firebaseUser != null){
+            Toast.makeText(MainActivity.this, "Please verify your email",
+                    Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(MainActivity.this, LoginScreen.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+            finish();
+        }
+
+
+
     };
 
 }
