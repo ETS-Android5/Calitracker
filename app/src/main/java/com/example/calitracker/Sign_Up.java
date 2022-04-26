@@ -149,36 +149,36 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                         "Please enter your E-mail address",Toast.LENGTH_SHORT).show();
 
             }
-            if(TextUtils.isEmpty(pass)){
+            else if(TextUtils.isEmpty(pass)){
                 Toast.makeText(getApplicationContext(),
                         "Please enter your Password",Toast.LENGTH_SHORT).show();
 
             }
-            if(pass.length() == 0){
+            else if(pass.length() == 0){
                 Toast.makeText(getApplicationContext(),
                         "Please enter your Password",Toast.LENGTH_SHORT).show();
 
             }
-            if(pass.length() < 6 ){
+            else if(pass.length() < 6 ){
                 Toast.makeText(getApplicationContext(),
                         "Password must have at least 6 digits",Toast.LENGTH_SHORT).show();
 
             }
-            if(TextUtils.isDigitsOnly(pass)){
+            else if(TextUtils.isDigitsOnly(pass)){
                 Toast.makeText(getApplicationContext(),
                         "Password must include letters",Toast.LENGTH_SHORT).show();
             }
-            if(TextUtils.isEmpty(name)){
+            else if(TextUtils.isEmpty(name)){
                 Toast.makeText(getApplicationContext(),
                         "Please provide name",Toast.LENGTH_SHORT).show();
             }
 
-            if(TextUtils.isEmpty(lastName)){
+            else if(TextUtils.isEmpty(lastName)){
                 Toast.makeText(getApplicationContext(),
                         "Please provide last name",Toast.LENGTH_SHORT).show();
             }
 
-            if(TextUtils.isEmpty(dateOfBirth)){
+            else if(TextUtils.isEmpty(dateOfBirth)){
                 Toast.makeText(getApplicationContext(),
                         "Please provide date of birth",Toast.LENGTH_SHORT).show();
             }
