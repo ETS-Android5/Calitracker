@@ -39,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     TimerFragment timerFragment = new TimerFragment();
     CalculatorsFragment calculatorsFragment = new CalculatorsFragment();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
