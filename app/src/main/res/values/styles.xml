@@ -148,5 +148,16 @@
         <item name="android:textSize">12dp</item>
     </style>
 
+    <style name="settings_rightbuttontext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">329dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:fontFamily">@font/roboto_thin</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+        <item name="android:translationZ">90dp</item>
+    </style>
+
 
 </resources>

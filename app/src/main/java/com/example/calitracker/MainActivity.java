@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
         // if user already has an account, navigate to home activity
-        if (firebaseUser != null && firebaseUser.isEmailVerified()) {
+        else if (firebaseUser != null && firebaseUser.isEmailVerified()) {
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
             finish();
         }
 
-        if(firebaseUser != null){
+        else if(firebaseUser != null && !firebaseUser.isEmailVerified()){
             Toast.makeText(MainActivity.this, "Please verify your email",
                     Toast.LENGTH_SHORT).show();
 

@@ -5,24 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1D1D1B"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
     tools:context=".SettingsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
 
-        <LinearLayout
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
-                android:layout_gravity="center"
                 android:layout_marginTop="40dp"
+                android:layout_marginBottom="24dp"
                 android:contentDescription="Logo"
+                app:layout_constraintBottom_toTopOf="@+id/nameLastNameTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_logo"
                 app:tint="@color/white" />
 
@@ -31,113 +40,218 @@
                 style="@style/fill_box_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="24dp" />
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/settingsEmailTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
             <TextView
                 android:id="@+id/settingsEmailTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto_thin"
                 android:textColor="@color/white"
-                android:textSize="10dp" />
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameLastNameTextView" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/settingsGenderButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
                 android:height="60dp"
                 android:backgroundTint="#1D1B1B"
                 android:text="GENDER"
                 android:textAlignment="viewStart"
                 app:icon="@drawable/ic_bi_gender_ambiguous"
-                app:iconGravity="start" />
+                app:iconGravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsEmailTextView" />
 
             <Button
-                android:id="@+id/button7"
-                android:layout_width="match_parent"
+                android:id="@+id/settingsMeasureButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:height="60dp"
-                android:backgroundTint="#1D1B1B"
-                android:text="EXERCISE LIBRARY"
-                android:textAlignment="viewStart"
-                app:icon="@drawable/ic_bx_male_female"
-                app:iconGravity="start" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
                 android:height="60dp"
                 android:backgroundTint="#1D1B1B"
                 android:text="UNITS OF MEASURE"
                 android:textAlignment="viewStart"
                 app:icon="@drawable/ic_gis_measure"
-                app:iconGravity="start" />
+                app:iconGravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsGenderButton" />
 
             <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
+                android:id="@+id/settingsDateOfBirthButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
                 android:height="60dp"
                 android:backgroundTint="#1D1B1B"
                 android:text="DATE OF BIRTH"
                 android:textAlignment="viewStart"
                 app:icon="@drawable/ic_akar_icons_cake"
-                app:iconGravity="start" />
+                app:iconGravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsMeasureButton" />
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
                 android:height="60dp"
                 android:backgroundTint="#1D1B1B"
+                android:clickable="false"
                 android:text="NOTIFICATIONS"
                 android:textAlignment="viewStart"
                 app:icon="@drawable/ic_clarity_bell_outline_badged"
-                app:iconGravity="start" />
+                app:iconGravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsDateOfBirthButton" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
                 android:height="60dp"
                 android:backgroundTint="#1D1B1B"
+                android:clickable="false"
                 android:text="SCREEN LOCK"
                 android:textAlignment="viewStart"
                 app:icon="@drawable/ic_ant_design_lock_twotone"
                 app:iconGravity="start"
-                app:iconTintMode="multiply" />
+                app:iconTintMode="multiply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button4" />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
+                android:id="@+id/settingsLogOutButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
                 android:height="60dp"
                 android:backgroundTint="#1D1B1B"
                 android:text="LOG OUT"
                 android:textAlignment="viewStart"
                 app:icon="@drawable/ic_bx_log_out"
-                app:iconGravity="start" />
+                app:iconGravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/genderButtonTextView"
+                style="@style/settings_rightbuttontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:textAlignment="viewEnd"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsGenderButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsGenderButton"
+                app:layout_constraintVertical_bias="0.487" />
+
+            <TextView
+                android:id="@+id/measureButtonTextView"
+                style="@style/settings_rightbuttontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:textAlignment="viewEnd"
+                android:textSize="12sp"
+                android:translationZ="90dp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsMeasureButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsMeasureButton"
+                app:layout_constraintVertical_bias="0.487" />
+
+            <TextView
+                android:id="@+id/dateOfBirthButtonTextView"
+                style="@style/settings_rightbuttontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="20dp"
+                android:textAlignment="viewEnd"
+                android:textSize="12sp"
+                android:translationZ="90dp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsDateOfBirthButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsDateOfBirthButton"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Switch
+                android:id="@+id/screenLockSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="335dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="15dp"
+                android:translationZ="90dp"
+                app:layout_constraintBottom_toBottomOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button3"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Switch
+                android:id="@+id/settingsNotificationsSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="335dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="15dp"
+                android:translationZ="90dp"
+                app:layout_constraintBottom_toBottomOf="@+id/button4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button4"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 </FrameLayout>

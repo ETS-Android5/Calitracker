@@ -69,6 +69,23 @@ public class SignUpPushNotifications extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_in);
             }
         });
+        String topic = "PushNotifications";
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(topic);
+        Log.d("subscribed", "subscribed: no ");
+
+
+        Map<String, Object> pushNotif = new HashMap<>();
+        pushNotif.put("Notifications", false);
+
+
+        auth.signInWithEmailAndPassword(EmailAndPass.email,EmailAndPass.pass);
+        FirebaseUser user = auth.getCurrentUser();
+        DocumentReference pushRef = db.collection("users").
+                document(user.getUid());
+
+        pushRef.update(pushNotif);
+
+
 
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -81,7 +98,7 @@ public class SignUpPushNotifications extends AppCompatActivity {
                     Log.d("subscribed", "subscribed: yes ");
 
 
-                   /* Map<String, Object> pushNotif = new HashMap<>();
+                   Map<String, Object> pushNotif = new HashMap<>();
                     pushNotif.put("Notifications", true);
 
                     auth.signInWithEmailAndPassword(EmailAndPass.email, EmailAndPass.pass);
@@ -89,21 +106,23 @@ public class SignUpPushNotifications extends AppCompatActivity {
                     DocumentReference pushRef = db.collection("users").
                             document(user.getUid());
 
-                    pushRef.update(pushNotif);*/
+                    pushRef.update(pushNotif);
                 }else{
 
                     FirebaseMessaging.getInstance().unsubscribeFromTopic(topic);
                     Log.d("subscribed", "subscribed: no ");
 
-                    /*Map<String, Object> pushNotif = new HashMap<>();
+
+                    Map<String, Object> pushNotif = new HashMap<>();
                     pushNotif.put("Notifications", false);
+
 
                     auth.signInWithEmailAndPassword(EmailAndPass.email,EmailAndPass.pass);
                     FirebaseUser user = auth.getCurrentUser();
                     DocumentReference pushRef = db.collection("users").
                             document(user.getUid());
 
-                    pushRef.update(pushNotif);*/
+                    pushRef.update(pushNotif);
                 }
 
             }
