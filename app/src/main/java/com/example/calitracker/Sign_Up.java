@@ -233,7 +233,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     }
     private void updateLabel(){
-        String myFormat = "dd/MM/yy";
+        String myFormat = "dd/M/yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.ENGLISH);
         SignUpDateOfBirth.setText(dateFormat.format(myCalendar.getTime()));
 

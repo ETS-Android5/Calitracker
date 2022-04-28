@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -39,6 +40,7 @@ public class SettingsFragment extends Fragment {
     String name;
     String email;
     String selectedGender = "Male";
+    String selectedMetric = "Kg";
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -80,7 +82,8 @@ public class SettingsFragment extends Fragment {
 
             private void showOptionsDialog() {
                 String[] genders = {"Male", "Female"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),
+                        R.style.AlertDialogTheme);
                 builder.setTitle("Gender");
                 builder.setSingleChoiceItems(genders, 0,
                         new DialogInterface.OnClickListener() {
@@ -132,6 +135,83 @@ public class SettingsFragment extends Fragment {
                 builder.show();
             }
         });
+
+
+
+        measureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showOptionsDialog();
+            }
+
+            private void showOptionsDialog() {
+                String[] metrics = {"KG", "LB"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),
+                        R.style.AlertDialogTheme);
+                builder.setTitle("Units of Measure");
+                builder.setSingleChoiceItems(metrics, 0,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                selectedMetric = metrics[i];
+
+                            }
+                        });
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if(selectedMetric.equals("KG")){
+
+                            Map<String, Object> selectMetric = new HashMap<>();
+                            selectMetric.put("Metric", "Kg");
+
+                            FirebaseUser user = auth.getCurrentUser();
+                            DocumentReference metricRef = db.collection("users").
+                                    document(user.getUid());
+
+                            metricRef.update(selectMetric);
+
+                            measureTextView.setText(selectedMetric);
+
+                        }else{
+
+                            Map<String, Object> selectMetric = new HashMap<>();
+                            selectMetric.put("Metric", "Lb");
+
+                            FirebaseUser user = auth.getCurrentUser();
+                            DocumentReference metricRef = db.collection("users").
+                                    document(user.getUid());
+
+                            metricRef.update(selectMetric);
+
+                            measureTextView.setText(selectedMetric);
+
+
+                        }
+                    }
+                });
+                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.show();
+            }
+        });
+
+
+        dateOfBirthButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment newFragment = new SelectDateFragment();
+                newFragment.show(getParentFragmentManager(), "DatePicker");
+            }
+        });
+
+
+
         
         
         
