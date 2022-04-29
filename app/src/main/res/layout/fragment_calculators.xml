@@ -15,8 +15,8 @@
         android:background="#1D1D1B"
         app:elevation="12dp"
         app:itemIconTint="@drawable/color_selector"
-        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle_active"
-        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle_inactive"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle_active2"
+        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle_inactive2"
         app:itemTextColor="@drawable/color_selector"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/calculator_nav_menu">
