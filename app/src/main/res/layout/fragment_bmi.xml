@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BmiFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1D1D1B">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/heightCmEditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/roboto_bold"
+                android:hint="HEIGHT"
+                android:inputType="number"
+                android:textColor="#FFFFFFFF" />
+
+            <EditText
+                android:id="@+id/weightKgEditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/roboto_bold"
+                android:hint="WEIGHT"
+                android:inputType="number"
+                android:textColor="#FFFFFFFF" />
+
+            <Button
+                android:id="@+id/calculateBmiButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/roboto_bold"
+                android:text="CALCULATE"
+                app:cornerRadius="60dp" />
+
+            <TextView
+                android:id="@+id/BmiTextView"
+                style="@style/fill_box_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/BmiHealthTextView"
+                style="@style/fill_box_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</FrameLayout>

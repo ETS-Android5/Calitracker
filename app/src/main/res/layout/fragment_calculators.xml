@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1D1D1B"
     tools:context=".CalculatorsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/calculatorNav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1D1D1B"
+        app:elevation="12dp"
+        app:itemIconTint="@drawable/color_selector"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle_active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle_inactive"
+        app:itemTextColor="@drawable/color_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/calculator_nav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/container_cal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/calculatorNav_view">
+
+    </FrameLayout>
+
+
+</RelativeLayout>
+
+
+

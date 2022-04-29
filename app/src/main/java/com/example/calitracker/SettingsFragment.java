@@ -212,15 +212,6 @@ public class SettingsFragment extends Fragment {
 
 
 
-        
-        
-        
-        
-        
-        
-        
-        
-
         screenLockSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
