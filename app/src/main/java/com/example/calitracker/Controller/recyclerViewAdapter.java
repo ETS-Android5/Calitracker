@@ -1,6 +1,7 @@
 package com.example.calitracker.Controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.calitracker.R;
+import com.example.calitracker.exercises;
 
 public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapter.ViewHolder> {
 
@@ -39,6 +42,16 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.myText1.setText(data1[position]);
         holder.myImage.setImageResource(images[position]);
+
+
+        holder.exercisesLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, exercises.class);
+                intent.putExtra("data1", data1[position]);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -50,12 +63,14 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
 
         TextView myText1;
         ImageView myImage;
+        ConstraintLayout exercisesLayout;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             myText1 = itemView.findViewById(R.id.exerciseTextView);
             myImage = itemView.findViewById(R.id.exerciseImageView);
+            exercisesLayout = itemView.findViewById(R.id.exercisesLayout);
         }
     }
 }

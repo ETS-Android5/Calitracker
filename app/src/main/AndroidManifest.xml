@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calitracker">
         <activity
+            android:name=".exercises"
+            android:exported="false" />
+        <activity
             android:name=".SignUpEnd"
             android:exported="false" />
         <activity
@@ -51,9 +54,7 @@
             android:name=".Controller.PushNotificationService"
             android:exported="false">
             <intent-filter>
-                <action
-                    android:name="com.google.firebase.MESSAGING_EVENT">
-                </action>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
             </intent-filter>
         </service>
 

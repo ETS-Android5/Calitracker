@@ -32,7 +32,145 @@
         <item>PUSH UPS</item>
         <item>DIPS</item>
         <item>HORIZONTAL PULLS</item>
-        <item>PLANK</item>
+
+    </string-array>
+
+    <string-array name="SQUATS">
+        <item>ASSISTED SQUAT</item>
+        <item>DEEP ASSISTED SQUAT</item>
+        <item>SQUATS</item>
+        <item>DEEP SQUATS</item>
+        <item>BULGARIAN SPLIT SQUATS</item>
+        <item>BEGINNER SHRIMPS</item>
+        <item>ASSISTED ONE LEGGED SQUATS</item>
+        <item>WEIGHTED ONE LEGGED SQUATS</item>
+        <item>ONE-LEGGED SQUATS</item>
+        <item>RENEGADE PISTOLS</item>
+        <item>INTERMEDIATE SHRIMPS</item>
+        <item>ADVANCED SHRIMPS</item>
+
+    </string-array>
+
+    <string-array name="PULL_UPS">
+        <item>LEG ASSISTED PULL UPS</item>
+        <item>JACKKNIFE PULL UPS</item>
+        <item>ECCENTRIC PULL UPS</item>
+        <item>HALF PULL UPS</item>
+        <item>PULL UPS</item>
+        <item>CLOSE GRIP PULL UPS</item>
+        <item>WIDE GRIP PULL UPS</item>
+        <item>ARCHER PULL UPS</item>
+        <item>STERNUM PULL UPS</item>
+        <item>BELLY BUTTON PULL UPS</item>
+        <item>ONE ARM TOWEL-ASSISTED PULL UPS</item>
+        <item>HALF ONE ARM PULL UPS</item>
+        <item>ONE ARM PULL UPS</item>
+
+    </string-array>
+
+    <string-array name="HANDSTAND">
+        <item>INCLINE PIKE PUSH UPS</item>
+        <item>INCLINE PIKE DIAMOND PUSH UPS</item>
+        <item>PIKE PUSH UPS</item>
+        <item>PIKE DIAMOND PUSH UPS</item>
+        <item>DECLINE PIKE PUSH UPS</item>
+        <item>DECLINE PIKE DIAMOND PUSH UPS</item>
+        <item>WALL BENT WAIST HANDSTAND PUSH UPS</item>
+        <item>WALL BENT WAIST HANDSTAND DIAMOND PUSH UPS</item>
+        <item>WALL HANDSTAND PUSH UPS</item>
+        <item>WALL HANDSTAND DIAMOND PUSH UPS</item>
+        <item>WALL HANDSTAND RAISED PUSH UPS</item>
+
+
+    </string-array>
+
+    <string-array name="LEGRAISES">
+        <item>FLAT KNEE RAISES</item>
+        <item>FLAT BENT LEG RAISES</item>
+        <item>FLAT STRAIGHT LEG RAISES</item>
+        <item>FOREARM KNEE RAISES</item>
+        <item>HANGING KNEE RAISES</item>
+        <item>FOREARM BENT LEG RAISES</item>
+        <item>HANGING BENT LEG RAISES</item>
+        <item>FOREARM STRAIGHT LEG RAISES</item>
+        <item>HANGING STRAIGHT LEG RAISES</item>
+        <item>HANGING BENT LEG V-RAISES</item>
+        <item>HANGING STRAIGHT LEG V-RAISES</item>
+        <item>HANGING FAN RAISES</item>
+        <item>HANGING V-RAISE WINDSHIELD WIPERS</item>
+        <item>ONE ARM HANGING LEG RAISES</item>
+
+    </string-array>
+
+    <string-array name="PUSH_UPS">
+        <item>WALL PUSH UPS</item>
+        <item>BOX PUSH UPS</item>
+        <item>¾ PUSH UPS</item>
+        <item>¾ PUSH UPS +5S ECCENTRICS</item>
+        <item>PUSH UPS</item>
+        <item>ELBOWS IN PUSH UPS</item>
+        <item>DIAMOND PUSH UPS</item>
+        <item>UNEVEN PUSH UPS</item>
+        <item>DECLINE PUSH UPS</item>
+        <item>DECLINE ELBOWS IN PUSH UPS</item>
+        <item>DECLINE DIAMOND PUSH UPS</item>
+        <item>WALL ONE ARM PUSH UPS</item>
+        <item>INCLINE ONE ARM PUSH UPS</item>
+        <item>ONE ARM PUSH UPS</item>
+        <item>DECLINE ONE ARM PUSH UPS</item>
+
+    </string-array>
+
+    <string-array name="HORIZONTAL_PULLS">
+        <item>VERTICAL PULLS</item>
+        <item>VERTICAL PULLS WITH A TOWEL</item>
+        <item>INVERTED ROWS, LEGS BENT</item>
+        <item>INVERTED ROWS, STRAIGHT LEGS</item>
+        <item>INVERTED ROWS, ONE LEG EXTENDED</item>
+        <item>INVERTED ROWS, LEGS ELEVATED</item>
+        <item>LEGS ELEVATED, ONE LEG EXTENDED</item>
+        <item>TUCK KNEES, FRONT LEVER ROWS</item>
+        <item>ADVANCED TUCK KNEES ROWS</item>
+        <item>ONE TUCK KNEE, ONE LEG EXTENDED ROWS</item>
+        <item>STRADDLE LEGS FRONT LEVER ROWS</item>
+        <item>FRONT LEVER ROWS</item>
+
+
+    </string-array>
+
+    <string-array name="DIPS">
+        <item>BENT KNEE BENCH DIPS</item>
+        <item>STRAIGHT LEGS BENCH DIPS</item>
+        <item>ONE ELEVATED LEG, STRAIGHT LEGS DIPS</item>
+        <item>ELEVATED LEGS BENCH DIPS</item>
+        <item>ONE EXTENDED LEG, ELEVATED LEGS DIPS</item>
+        <item>LEGS SUPPORTED DIPS</item>
+        <item>ONE LEG SUPPORTED DIPS</item>
+        <item>JUMPING AND 5S ECCENTRIC DIPS</item>
+        <item>HALF DIPS</item>
+        <item>DIPS</item>
+        <item>LEGS FORWARD DIPS</item>
+        <item>RUSSIAN DIPS</item>
+
+
+    </string-array>
+
+    <string-array name="LEVEL">
+        <item>1ST LEVEL</item>
+        <item>2ND LEVEL</item>
+        <item>3RD LEVEL</item>
+        <item>4TH LEVEL</item>
+        <item>5TH LEVEL</item>
+        <item>6TH LEVEL</item>
+        <item>7TH LEVEL</item>
+        <item>8TH LEVEL</item>
+        <item>9TH LEVEL</item>
+        <item>10TH LEVEL</item>
+        <item>11TH LEVEL</item>
+        <item>12TH LEVEL</item>
+        <item>13TH LEVEL</item>
+        <item>14TH LEVEL</item>
+        <item>15TH LEVEL</item>
 
     </string-array>
 
@@ -47,4 +185,5 @@
         <item>random description</item>
 
     </string-array>
+    <string name="title_activity_exercises">ExercisesActivity</string>
 </resources>
