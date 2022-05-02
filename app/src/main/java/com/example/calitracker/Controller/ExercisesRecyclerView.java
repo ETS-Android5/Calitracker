@@ -51,6 +51,8 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
                 LayoutInflater inflater = LayoutInflater.from(context);
                 View view2 = inflater.inflate(R.layout.popup,null);
                 youTubePlayerView = view2.findViewById(R.id.youtube_player_view);
+
+
                 youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                     @Override
                     public void onReady(@NonNull YouTubePlayer youTubePlayer) {
@@ -58,9 +60,8 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
                         youTubePlayer.loadVideo(videoID,0);
                         super.onReady(youTubePlayer);
                     }
+
                 });
-
-
 
                 dialogBuilder.setView(view2);
                 dialog = dialogBuilder.create();
