@@ -165,6 +165,31 @@
                 app:layout_constraintTop_toBottomOf="@+id/exercisesNameTextView"
                 app:layout_constraintVertical_bias="0.589" />
 
+            <ImageView
+                android:id="@+id/playVideoButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:tint="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.022"
+                app:layout_constraintStart_toEndOf="@+id/exercisesLevelTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/circle_background" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/playVideoButton"
+                app:layout_constraintEnd_toEndOf="@+id/playVideoButton"
+                app:layout_constraintStart_toStartOf="@+id/playVideoButton"
+                app:layout_constraintTop_toTopOf="@+id/playVideoButton"
+                app:srcCompat="@drawable/ic_baseline_play_arrow_24" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

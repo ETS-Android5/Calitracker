@@ -51,6 +51,22 @@
 
     </string-array>
 
+    <string-array name="SQUATS_VIDEOURL">
+        <item>CcnyxSe_H9g</item>
+        <item>p83ngGsZhp4</item>
+        <item>xqvCmoLULNY</item>
+        <item>AYQWVdPgQl0</item>
+        <item>7Aqeb8UHl4k</item>
+        <item>Dpgn6eRtsdw</item>
+        <item>E3FZyX5NOoY</item>
+        <item>NozfdD-u12A</item>
+        <item>9_Ca2YRRdtE</item>
+        <item>Yx7-ywBEIQM</item>
+        <item>Dpgn6eRtsdw</item>
+        <item>5EJtZsA43vI</item>
+
+    </string-array>
+
     <string-array name="PULL_UPS">
         <item>LEG ASSISTED PULL UPS</item>
         <item>JACKKNIFE PULL UPS</item>
@@ -68,6 +84,23 @@
 
     </string-array>
 
+    <string-array name="PULL_UPS_VIDEOURL">
+        <item>M8NHO7tb1I</item>
+        <item>0AGflL3itws</item>
+        <item>hvhQXzJ4vhM</item>
+        <item>_o8SBJr--Pk</item>
+        <item>HRV5YKKaeVw</item>
+        <item>j--ftfgTL5I</item>
+        <item>dWB-hEfgMD4</item>
+        <item>ikKG260TMwU</item>
+        <item>XXuIwW56Zw</item>
+        <item>XXuIwW56Zw</item>
+        <item>FZPjwl1NSdI</item>
+        <item>ve0EIQdRLag</item>
+        <item>yluoscpttpI</item>
+
+    </string-array>
+
     <string-array name="HANDSTAND">
         <item>INCLINE PIKE PUSH UPS</item>
         <item>INCLINE PIKE DIAMOND PUSH UPS</item>
@@ -80,6 +113,22 @@
         <item>WALL HANDSTAND PUSH UPS</item>
         <item>WALL HANDSTAND DIAMOND PUSH UPS</item>
         <item>WALL HANDSTAND RAISED PUSH UPS</item>
+
+
+    </string-array>
+
+    <string-array name="HANDSTAND_VIDEOURL">
+        <item>Dh5r4KMEKgo</item>
+        <item>Ruu2bEEzhSg</item>
+        <item>2GrYI9L_PnU</item>
+        <item>XyEAJZn_QeM</item>
+        <item>OQAZoUPoPUw</item>
+        <item>3_t6n2AUQQ0</item>
+        <item>r2kV4xfBSEA</item>
+        <item>r2kV4xfBSEA</item>
+        <item>WxgJS48wf1M</item>
+        <item>kgTbAtZHfOs</item>
+        <item>87MFaCpbTvM</item>
 
 
     </string-array>
@@ -102,6 +151,24 @@
 
     </string-array>
 
+    <string-array name="LEGRAISES_VIDEOURL">
+        <item>SeiGDD-ABE0</item>
+        <item>qq69_MifXAc</item>
+        <item>hav89ezKkPA</item>
+        <item>IGrvIZjNCQU</item>
+        <item>KNzJ3GuIpB8</item>
+        <item>zfzJEuUDCS8</item>
+        <item>CtFMjDbU0P4</item>
+        <item>zfzJEuUDCS8</item>
+        <item>7jI6fDNY_yM</item>
+        <item>FrZBflOxEUY</item>
+        <item>FrZBflOxEUY</item>
+        <item>JOVlyJ19DJ4</item>
+        <item>6ZKZCxAfPE8</item>
+        <item>nDK7Fc_ryck</item>
+
+    </string-array>
+
     <string-array name="PUSH_UPS">
         <item>WALL PUSH UPS</item>
         <item>BOX PUSH UPS</item>
@@ -118,6 +185,25 @@
         <item>INCLINE ONE ARM PUSH UPS</item>
         <item>ONE ARM PUSH UPS</item>
         <item>DECLINE ONE ARM PUSH UPS</item>
+
+    </string-array>
+
+    <string-array name="PUSH_UPS_VIDEOURL">
+        <item>N5C9NUHZ20U</item>
+        <item>dcJVA2sBPqw</item>
+        <item>DWx28SKtmMA</item>
+        <item>DWx28SKtmMA</item>
+        <item>l3ySVKYVJ8</item>
+        <item>J0DnG1_S92I</item>
+        <item>J0DnG1_S92I</item>
+        <item>o1abTRdwpUs</item>
+        <item>SKPab2YC8BE</item>
+        <item>t6n2AUQQ0</item>
+        <item>t6n2AUQQ0</item>
+        <item>lkHe72iH_1I</item>
+        <item>mctH5fyzqqo</item>
+        <item>ReKZry7JQEQ</item>
+        <item>Hpw0M3Pz8sE</item>
 
     </string-array>
 
@@ -138,6 +224,23 @@
 
     </string-array>
 
+    <string-array name="HORIZONTAL_PULLS_VIDEOURL">
+        <item>F8kIJMeqCMs</item>
+        <item>VERTICAL PULLS WITH A TOWEL</item>
+        <item>G657nWtyrek</item>
+        <item>Ttejv7VoZo0</item>
+        <item>ZpV3GZ5jEXc</item>
+        <item>ZpV3GZ5jEXc</item>
+        <item>ZpV3GZ5jEXc</item>
+        <item>WYKsBVIKQss</item>
+        <item>mpX5l2V2MnY</item>
+        <item>ONE TUCK KNEE, ONE LEG EXTENDED ROWS</item>
+        <item>KdOGz5JQ0tk</item>
+        <item>owXfTSkJqr4</item>
+
+
+    </string-array>
+
     <string-array name="DIPS">
         <item>BENT KNEE BENCH DIPS</item>
         <item>STRAIGHT LEGS BENCH DIPS</item>
@@ -151,6 +254,23 @@
         <item>DIPS</item>
         <item>LEGS FORWARD DIPS</item>
         <item>RUSSIAN DIPS</item>
+
+
+    </string-array>
+
+    <string-array name="DIPS_VIDEOURL">
+        <item>13Job_1g5Ck</item>
+        <item>dgDCYfHkHnU</item>
+        <item>UbIVpeSdBTs</item>
+        <item>fdmxpd8OK1o</item>
+        <item>ONE EXTENDED LEG, ELEVATED LEGS DIPS</item>
+        <item>LEGS SUPPORTED DIPS</item>
+        <item>ONE LEG SUPPORTED DIPS</item>
+        <item>JUMPING AND 5S ECCENTRIC DIPS</item>
+        <item>Cm81Hqwt-rU</item>
+        <item>wjUmnZH528Y</item>
+        <item>LEGS FORWARD DIPS</item>
+        <item>J1IA1R4lBKQ</item>
 
 
     </string-array>
