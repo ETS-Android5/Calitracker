@@ -3,15 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#1D1D1B"
     tools:context=".ProgressFragment">
 
-
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/progressNav_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Progress Fragment"
-        android:layout_centerInParent="true"/>
+        android:background="#1D1D1B"
+        app:elevation="12dp"
+        app:itemIconTint="@drawable/color_selector"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle_active2"
+        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle_inactive2"
+        app:itemTextColor="@drawable/color_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/progress_nav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/container_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/progressNav_view">
+
+    </FrameLayout>
 
 
-    </RelativeLayout>
+
+</RelativeLayout>

@@ -40,6 +40,7 @@
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_push_notifications.xml" value="0.5" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_select_gender.xml" value="0.5" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/activity_sign_up_select_metric.xml" value="0.33" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/add_weight_layout.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/content_sign_up.xml" value="0.3532608695652174" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/dialogdrawer.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/exercises_row.xml" value="0.67" />
@@ -47,16 +48,19 @@
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_bf.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_bmi.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_bmr.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_body_fat_progress.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_calculator_nav.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_calculators.xml" value="0.33" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_exercises_progress.xml" value="0.67" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_home.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_home_nav.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_iw.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_progress.xml" value="0.22" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_progress.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_progress_nav.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_second.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_settings.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_timer.xml" value="0.5" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_weight_progress.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/my_row.xml" value="0.25" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/popup.xml" value="0.25" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/sign_up.xml" value="0.3532608695652174" />
@@ -65,6 +69,7 @@
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/menu/calculator_nav_menu.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/menu/home_nav_menu.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/menu/main_menu.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/menu/progress_nav_menu.xml" value="0.25925925925925924" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3485" />
       </map>
     </option>

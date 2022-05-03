@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1D1D1B"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView15"
+        style="@style/fill_box_textview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:paddingLeft="10dp"
+        android:text="WEIGHT:" />
+
+    <EditText
+        android:id="@+id/WeightEditTextNumberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:inputType="numberDecimal"
+        android:paddingLeft="10dp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView16"
+        style="@style/fill_box_textview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:paddingLeft="10dp"
+        android:text="DATE:" />
+
+    <EditText
+        android:id="@+id/WeightDateEditTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:inputType="date"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white" />
+
+</LinearLayout>
