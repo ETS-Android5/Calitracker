@@ -42,6 +42,7 @@
         android:fontFamily="@font/roboto"
         android:inputType="date"
         android:paddingLeft="10dp"
+        android:focusable="false"
         android:textColor="@color/white" />
 
 </LinearLayout>
