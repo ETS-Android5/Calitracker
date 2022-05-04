@@ -29,6 +29,8 @@ import android.widget.Toast;
 
 import com.example.calitracker.Controller.TextViewDrawer;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -57,6 +59,7 @@ public class WeightProgressFragment extends Fragment {
     LineGraphSeries lineGraphSeries;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
     final Calendar myCalendar= Calendar.getInstance();
+    FirebaseAuth auth;
 
 
 
@@ -64,7 +67,8 @@ public class WeightProgressFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
+        auth = FirebaseAuth.getInstance();
+                FirebaseUser user = auth.getCurrentUser();
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_weight_progress, container,
@@ -170,7 +174,8 @@ public class WeightProgressFragment extends Fragment {
 
 
 
-
+                //TODO  dane posortować przed wyrzuceniem na wykres dodatkowo trza bedzie do bazy danych wrzucac te dane o wadze i dacie pod konkretne userID
+                //TODO bo tera to po calej bazie danych mi petla sie robi
 
                 builder.setPositiveButton("ADD",
                         new DialogInterface.OnClickListener() {
