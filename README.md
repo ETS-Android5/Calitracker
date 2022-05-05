@@ -7,7 +7,7 @@ The main goal is to be able to track calisthenics training progress.
 
 Features:
 - Full Body Workout plan with videos
-- Tracking weight, body fat and exercises progress 
+- Tracking weight and exercises progress 
 - Timer
 - BMI and BMR calculator
 
