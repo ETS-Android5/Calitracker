@@ -25,7 +25,6 @@ public class ProgressFragment extends Fragment {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) view
                 .findViewById(R.id.progressNav_view);
 
-        BodyFatProgressFragment bodyFatProgressFragment = new BodyFatProgressFragment();
         ExercisesProgressFragment exercisesProgressFragment = new ExercisesProgressFragment();
         WeightProgressFragment weightProgressFragment = new WeightProgressFragment();
 
@@ -51,11 +50,7 @@ public class ProgressFragment extends Fragment {
                                 exercisesProgressFragment)
                                 .commit();
                         return true;
-                    case R.id.navigation_bodyfat:
-                        getChildFragmentManager().beginTransaction().replace(R.id.container_progress,
-                                bodyFatProgressFragment)
-                                .commit();
-                        return true;
+
 
 
 

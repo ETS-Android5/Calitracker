@@ -35,6 +35,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
@@ -55,7 +56,7 @@ import java.util.Map;
 public class WeightProgressFragment extends Fragment {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference("chartTable");
+    DatabaseReference reference = database.getReference("users");
     LineGraphSeries lineGraphSeries;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
     final Calendar myCalendar= Calendar.getInstance();
@@ -126,7 +127,7 @@ public class WeightProgressFragment extends Fragment {
                 textView1.setLayoutParams(layoutParams);
                 textView1.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
                 Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.roboto);
-                textView1.setText(weight + " " + date);
+                textView1.setText(weight + "kg" + "       " + date);
                 return textView1;
 
             }
@@ -173,10 +174,6 @@ public class WeightProgressFragment extends Fragment {
 
 
 
-
-                //TODO  dane posortować przed wyrzuceniem na wykres dodatkowo trza bedzie do bazy danych wrzucac te dane o wadze i dacie pod konkretne userID
-                //TODO bo tera to po calej bazie danych mi petla sie robi
-
                 builder.setPositiveButton("ADD",
                         new DialogInterface.OnClickListener() {
                     @Override
@@ -190,14 +187,16 @@ public class WeightProgressFragment extends Fragment {
                             } else{
                                 linearLayout.addView(createNewTextView(weightEditText.getText().toString(),
                                         dateEditText.getText().toString()));
-                                String id = reference.push().getKey();
+
+                                String id = user.getUid();
+                                String randomId = reference.push().getKey();
 
                                 try {
                                     Date date = sdf.parse(dateEditText.getText().toString());
                                     long x = date.getTime();
                                     int y = Integer.parseInt(weightEditText.getText().toString());
                                     PointValue pointValue = new PointValue(x,y);
-                                    reference.child(id).setValue(pointValue);
+                                    reference.child(id).child(randomId).setValue(pointValue);
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
@@ -222,10 +221,11 @@ public class WeightProgressFragment extends Fragment {
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                String id = user.getUid();
                 int index = 0;
-                DataPoint[] dp = new DataPoint[(int) snapshot.getChildrenCount()];
-                for(DataSnapshot myDataSnapshot : snapshot.getChildren()){
+
+                DataPoint[] dp = new DataPoint[(int) snapshot.child(id).getChildrenCount()];
+                for(DataSnapshot myDataSnapshot : snapshot.child(id).getChildren()){
                     PointValue pointValue = myDataSnapshot.getValue(PointValue.class);
                     dp[index] = new DataPoint(pointValue.getxValue(), pointValue.getyValue());
                     String str1 = Integer.toString(pointValue.getyValue());
@@ -245,7 +245,7 @@ public class WeightProgressFragment extends Fragment {
                 textView1.setLayoutParams(layoutParams);
                 textView1.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
                 Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.roboto);
-                textView1.setText(weight + " " + date);
+                textView1.setText(weight + "kg" + "       " + date);
                 return textView1;
             }
 
@@ -272,13 +272,18 @@ public class WeightProgressFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DataPoint[] dp = new DataPoint[(int) snapshot.getChildrenCount()];
+                FirebaseAuth auth;
+                auth = FirebaseAuth.getInstance();
+                FirebaseUser user = auth.getCurrentUser();
+                String id = user.getUid();
+                DataPoint[] dp = new DataPoint[(int) snapshot.child(id).getChildrenCount()];
                 int index = 0;
-                for(DataSnapshot myDataSnapshot : snapshot.getChildren()){
+                for(DataSnapshot myDataSnapshot : snapshot.child(id).getChildren()){
                     PointValue pointValue = myDataSnapshot.getValue(PointValue.class);
                     dp[index] = new DataPoint(pointValue.getxValue(), pointValue.getyValue());
                     index ++;
                 }
+
                 lineGraphSeries.resetData(dp);
 
 
