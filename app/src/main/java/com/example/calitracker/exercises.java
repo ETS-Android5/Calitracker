@@ -11,7 +11,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.calitracker.Controller.ExercisesRecyclerView;
-import com.example.calitracker.Controller.recyclerViewAdapter;
+import com.sambhav2358.tinydb.TinyDB;
+import com.sambhav2358.tinydb.TinyDBManager;
 
 import java.util.Objects;
 
@@ -41,7 +42,7 @@ public class exercises extends AppCompatActivity {
             s2 = getResources().getStringArray(R.array.SQUATS);
             s3 = getResources().getStringArray(R.array.SQUATS_VIDEOURL);
             ExercisesRecyclerView exercisesRecyclerView = new ExercisesRecyclerView(this,
-                    s1,s2,s3);
+                    s1,s2,s3,"squat");
             recyclerView.setAdapter(exercisesRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         } else if(data1.equals("PULL UPS")){
@@ -49,7 +50,7 @@ public class exercises extends AppCompatActivity {
             s2 = getResources().getStringArray(R.array.PULL_UPS);
             s3 = getResources().getStringArray(R.array.PULL_UPS_VIDEOURL);
             ExercisesRecyclerView exercisesRecyclerView = new ExercisesRecyclerView(this,
-                    s1,s2,s3);
+                    s1,s2,s3,"pullup");
             recyclerView.setAdapter(exercisesRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }else if(data1.equals("HANDSTAND PUSH UPS")){
@@ -57,7 +58,7 @@ public class exercises extends AppCompatActivity {
             s2 = getResources().getStringArray(R.array.HANDSTAND);
             s3 = getResources().getStringArray(R.array.HANDSTAND_VIDEOURL);
             ExercisesRecyclerView exercisesRecyclerView = new ExercisesRecyclerView(this,
-                    s1,s2,s3);
+                    s1,s2,s3,"handstand");
             recyclerView.setAdapter(exercisesRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }else if(data1.equals("LEG RAISES")){
@@ -65,7 +66,7 @@ public class exercises extends AppCompatActivity {
             s2 = getResources().getStringArray(R.array.LEGRAISES);
             s3 = getResources().getStringArray(R.array.LEGRAISES_VIDEOURL);
             ExercisesRecyclerView exercisesRecyclerView = new ExercisesRecyclerView(this,
-                    s1,s2,s3);
+                    s1,s2,s3,"legraises");
             recyclerView.setAdapter(exercisesRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }else if(data1.equals("PUSH UPS")){
@@ -73,7 +74,7 @@ public class exercises extends AppCompatActivity {
             s2 = getResources().getStringArray(R.array.PUSH_UPS);
             s3 = getResources().getStringArray(R.array.PUSH_UPS_VIDEOURL);
             ExercisesRecyclerView exercisesRecyclerView = new ExercisesRecyclerView(this,
-                    s1,s2,s3);
+                    s1,s2,s3,"pushups");
             recyclerView.setAdapter(exercisesRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }else if(data1.equals("DIPS")){
@@ -81,7 +82,7 @@ public class exercises extends AppCompatActivity {
             s2 = getResources().getStringArray(R.array.DIPS);
             s3 = getResources().getStringArray(R.array.DIPS_VIDEOURL);
             ExercisesRecyclerView exercisesRecyclerView = new ExercisesRecyclerView(this,
-                    s1,s2,s3);
+                    s1,s2,s3,"dips");
             recyclerView.setAdapter(exercisesRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }else if(data1.equals("HORIZONTAL PULLS")){
@@ -89,7 +90,7 @@ public class exercises extends AppCompatActivity {
             s2 = getResources().getStringArray(R.array.HORIZONTAL_PULLS);
             s3 = getResources().getStringArray(R.array.HORIZONTAL_PULLS_VIDEOURL);
             ExercisesRecyclerView exercisesRecyclerView = new ExercisesRecyclerView(this,
-                    s1,s2,s3);
+                    s1,s2,s3,"horizontalpulls");
             recyclerView.setAdapter(exercisesRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }
@@ -108,4 +109,6 @@ public class exercises extends AppCompatActivity {
 
 
     }
+
+
 }
