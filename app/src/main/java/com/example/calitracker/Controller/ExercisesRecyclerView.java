@@ -2,11 +2,15 @@ package com.example.calitracker.Controller;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,7 +18,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.calitracker.ExercisesProgressFragment;
 import com.example.calitracker.R;
+import com.example.calitracker.exercises;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
@@ -79,6 +85,30 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
 
             }
         });
+
+        // passing true if user clicked on the check button
+
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
+
+                    tinyDB.putBoolean("checkBox"+data2[position]+exercise, true);
+
+                }else{
+                    tinyDB.putBoolean("checkBox"+data2[position]+exercise, false);
+                }
+            }
+        });
+
+        TinyDBManager manager2 = TinyDB.getInstance(context);
+        if(manager2.getBoolean("checkBox" + data2[position] + exercise, false)) {
+            holder.checkBox.setChecked(true);
+        }else{
+            holder.checkBox.setChecked(false);
+        }
+
+
 
         // series initialization
 
@@ -195,6 +225,7 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
             TextView level, description;
             ImageView playVideoButton;
             EditText series1,series2,series3,series4,series5;
+            CheckBox checkBox;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -207,6 +238,7 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
             series3 = itemView.findViewById(R.id.series3);
             series4 = itemView.findViewById(R.id.series4);
             series5 = itemView.findViewById(R.id.series5);
+            checkBox = itemView.findViewById(R.id.exercisesCheckBox);
 
 
         }
