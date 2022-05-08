@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calitracker.Controller.BMICalcUtil;
+import com.example.calitracker.R;
 
 
 public class BmiFragment extends Fragment {

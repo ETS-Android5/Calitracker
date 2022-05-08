@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.calitracker.Controller.BMICalcUtil;
 import com.example.calitracker.Controller.BMRCalcUtil;
 import com.example.calitracker.Model.EmailAndPass;
+import com.example.calitracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;

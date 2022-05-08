@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#1D1D1B"
     android:scrollbarAlwaysDrawHorizontalTrack="false"
-    tools:context=".SettingsFragment">
+    tools:context=".View.SettingsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -175,7 +175,7 @@
                 style="@style/settings_rightbuttontext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="50dp"
                 android:textAlignment="viewEnd"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/settingsGenderButton"
@@ -190,7 +190,7 @@
                 style="@style/settings_rightbuttontext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="50dp"
                 android:textAlignment="viewEnd"
                 android:textSize="12sp"
                 android:translationZ="90dp"
@@ -207,7 +207,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginBottom="20dp"
                 android:textAlignment="viewEnd"
                 android:textSize="12sp"
@@ -225,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="335dp"
                 android:layout_marginTop="18dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginBottom="15dp"
                 android:translationZ="90dp"
                 app:layout_constraintBottom_toBottomOf="@+id/button3"
@@ -241,7 +241,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="335dp"
                 android:layout_marginTop="18dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginBottom="15dp"
                 android:translationZ="90dp"
                 app:layout_constraintBottom_toBottomOf="@+id/button4"

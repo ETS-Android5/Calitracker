@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.calitracker.R;
 
 import java.util.Objects;
 

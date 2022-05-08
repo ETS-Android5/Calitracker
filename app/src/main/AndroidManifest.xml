@@ -11,38 +11,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calitracker">
         <activity
-            android:name=".exercises"
+            android:name=".View.exercises"
             android:exported="false" />
         <activity
-            android:name=".SignUpEnd"
+            android:name=".View.SignUpEnd"
             android:exported="false" />
         <activity
-            android:name=".SignUpPushNotifications"
+            android:name=".View.SignUpPushNotifications"
             android:exported="false" />
         <activity
-            android:name=".SignUpSelectMetric"
+            android:name=".View.SignUpSelectMetric"
             android:exported="false" />
         <activity
-            android:name=".SignUpSelectGender"
+            android:name=".View.SignUpSelectGender"
             android:exported="false" />
         <activity
-            android:name=".EmailVerification"
+            android:name=".View.EmailVerification"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".View.LogIn"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".View.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Sign_Up"
+            android:name=".View.Sign_Up"
             android:exported="false" />
         <activity
-            android:name=".LoginScreen"
+            android:name=".View.LoginScreen"
             android:exported="false"
             android:theme="@style/loginScreenTheme" />
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

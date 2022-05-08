@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.calitracker.Model.EmailAndPass;
+import com.example.calitracker.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;

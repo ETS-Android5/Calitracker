@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.calitracker.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

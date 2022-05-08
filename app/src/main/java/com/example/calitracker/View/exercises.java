@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,8 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.calitracker.Controller.ExercisesRecyclerView;
-import com.sambhav2358.tinydb.TinyDB;
-import com.sambhav2358.tinydb.TinyDBManager;
+import com.example.calitracker.R;
 
 import java.util.Objects;
 

@@ -2,11 +2,8 @@ package com.example.calitracker.Controller;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.calitracker.ExercisesProgressFragment;
 import com.example.calitracker.R;
-import com.example.calitracker.exercises;
-import com.google.common.collect.Iterables;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
@@ -30,7 +24,6 @@ import com.sambhav2358.tinydb.TinyDB;
 import com.sambhav2358.tinydb.TinyDBManager;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecyclerView.MyViewHolder>
 {
@@ -40,15 +33,15 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
     Context context;
     TinyDBManager tinyDB;
 
-        public ExercisesRecyclerView(Context ct, String[] s1, String[] s2, String[] videoArray,
-                                     String exerciseType) {
-            context = ct;
-            data1 = s1;
-            data2 = s2;
-            videoURL = videoArray;
-            exercise = exerciseType;
-            tinyDB = TinyDB.getInstance(context);
-        }
+    public ExercisesRecyclerView(Context ct, String[] s1, String[] s2, String[] videoArray,
+                                 String exerciseType) {
+        context = ct;
+        data1 = s1;
+        data2 = s2;
+        videoURL = videoArray;
+        exercise = exerciseType;
+        tinyDB = TinyDB.getInstance(context);
+    }
 
     @NonNull
     @Override
@@ -119,104 +112,12 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
                 if(isChecked){
 
                     tinyDB.putBoolean("checkBox"+data2[position]+exercise, true);
-                    tinyDB.putInt("checkBoxIndex"+data2[position]+exercise, position);
 
-
-
-                    squatIndexesArrayList.add(manager2.getInt("checkBoxIndex"+data2[position]+"squat", -1));
-                    pullupIndexesArrayList.add(manager2.getInt("checkBoxIndex"+data2[position]+"pullup", -1));
-                    handstandIndexesArrayList.add(manager2.getInt("checkBoxIndex"+data2[position]+"handstand", -1));
-                    legraisesIndexesArrayList.add(manager2.getInt("checkBoxIndex"+data2[position]+"legraises", -1));
-                    pushupsIndexesArrayList.add(manager2.getInt("checkBoxIndex"+data2[position]+"pushups", -1));
-                    dipsIndexesArrayList.add(manager2.getInt("checkBoxIndex"+data2[position]+"dips", -1));
-                    horizontalIndexesArrayList.add(manager2.getInt("checkBoxIndex"+data2[position]+"horizontalpulls", -1));
-
-
-
-                    // SQUATS IF/ELSE
-                    if (squatIndexesArrayList.size() > 1){
-                        squatIndexesArrayList.remove(1);
-                    }
-
-                    else if(pullupIndexesArrayList.size() >1){
-                        pullupIndexesArrayList.remove(1);
-                    }
-
-                    else if(handstandIndexesArrayList.size() >1){
-                        handstandIndexesArrayList.remove(1);
-                    }
-
-                    else if(legraisesIndexesArrayList.size() >1){
-                        legraisesIndexesArrayList.remove(1);
-                    }
-
-                    else if(pushupsIndexesArrayList.size() >1){
-                        pushupsIndexesArrayList.remove(1);
-                    }
-
-                    else if(dipsIndexesArrayList.size() >1){
-                        dipsIndexesArrayList.remove(1);
-                    }
-
-                    else if(horizontalIndexesArrayList.size() >1){
-                        horizontalIndexesArrayList.remove(1);
-                    }
-
-
-
-
-
-                    int lastElement = Iterables.getLast(squatIndexesArrayList, 0);
-                    int lastElement1 = Iterables.getLast(pullupIndexesArrayList, 0);
-                    int lastElement2 = Iterables.getLast(handstandIndexesArrayList, 0);
-                    int lastElement3 = Iterables.getLast(legraisesIndexesArrayList, 0);
-                    int lastElement4 = Iterables.getLast(pushupsIndexesArrayList, 0);
-                    int lastElement5 = Iterables.getLast(dipsIndexesArrayList, 0);
-                    int lastElement6 = Iterables.getLast(horizontalIndexesArrayList, 0);
-
-
-                    tinyDB.putInt("squatLevel", lastElement + 1);
-                    tinyDB.putInt("pullupLevel", lastElement + 1);
-                    tinyDB.putInt("handstandLevel", lastElement + 1);
-                    tinyDB.putInt("legraisesLevel", lastElement + 1);
-                    tinyDB.putInt("pushupsLevel", lastElement + 1);
-                    tinyDB.putInt("dipsLevel", lastElement + 1);
-                    tinyDB.putInt("horizontalLevel", lastElement + 1);
 
 
                 }else{
                     tinyDB.putBoolean("checkBox"+data2[position]+exercise, false);
 
-
-
-
-                    if (squatIndexesArrayList.size() > 1){
-                        squatIndexesArrayList.remove(1);
-                    }
-
-                    else if(pullupIndexesArrayList.size() >1){
-                        pullupIndexesArrayList.remove(1);
-                    }
-
-                    else if(handstandIndexesArrayList.size() >1){
-                        handstandIndexesArrayList.remove(1);
-                    }
-
-                    else if(legraisesIndexesArrayList.size() >1){
-                        legraisesIndexesArrayList.remove(1);
-                    }
-
-                    else if(pushupsIndexesArrayList.size() >1){
-                        pushupsIndexesArrayList.remove(1);
-                    }
-
-                    else if(dipsIndexesArrayList.size() >1){
-                        dipsIndexesArrayList.remove(1);
-                    }
-
-                    else if(horizontalIndexesArrayList.size() >1){
-                        horizontalIndexesArrayList.remove(1);
-                    }
 
                 }
 
@@ -248,23 +149,23 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
 
 
         // series TextWatchers
-            holder.series1.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    //todo auto generated
+        holder.series1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //todo auto generated
 
-                }
+            }
 
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    // TODO Auto-generated method stub
-                }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // TODO Auto-generated method stub
+            }
 
-                @Override
-                public void afterTextChanged(Editable editable) {
-                    tinyDB.putString("series1exercise"+data2[position]+exercise, editable.toString());
-                }
-            });
+            @Override
+            public void afterTextChanged(Editable editable) {
+                tinyDB.putString("series1exercise"+data2[position]+exercise, editable.toString());
+            }
+        });
 
         holder.series2.addTextChangedListener(new TextWatcher() {
             @Override
@@ -348,10 +249,10 @@ public class ExercisesRecyclerView extends RecyclerView.Adapter<ExercisesRecycle
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-            TextView level, description;
-            ImageView playVideoButton;
-            EditText series1,series2,series3,series4,series5;
-            CheckBox checkBox;
+        TextView level, description;
+        ImageView playVideoButton;
+        EditText series1,series2,series3,series4,series5;
+        CheckBox checkBox;
 
 
         public MyViewHolder(@NonNull View itemView) {

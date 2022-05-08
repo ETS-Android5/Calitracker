@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
 
+import com.example.calitracker.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;

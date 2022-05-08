@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.calitracker.Controller.recyclerViewAdapter;
+import com.example.calitracker.R;
 
 
 public class HomeFragment extends Fragment {

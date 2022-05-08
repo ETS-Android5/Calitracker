@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.Model;
 
 public class PointValue {
     long xValue;

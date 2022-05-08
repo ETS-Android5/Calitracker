@@ -1,4 +1,4 @@
-package com.example.calitracker;
+package com.example.calitracker.View;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -19,6 +19,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.calitracker.Model.EmailAndPass;
+import com.example.calitracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -81,7 +82,7 @@ public class SettingsFragment extends Fragment {
             }
 
             private void showOptionsDialog() {
-                String[] genders = {"Male", "Female"};
+                String[] genders = {"Male", "Female","Prefer not to say"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),
                         R.style.AlertDialogTheme);
                 builder.setTitle("Gender");
@@ -110,7 +111,23 @@ public class SettingsFragment extends Fragment {
 
                            genderTextView.setText(selectedGender);
 
-                        }else{
+                        }else if(selectedGender.equals("Prefer not to say")){
+
+                            Map<String, Object> selectGender = new HashMap<>();
+                            selectGender.put("Gender", "Prefer not to say");
+
+                            FirebaseUser user = auth.getCurrentUser();
+                            DocumentReference genderRef = db.collection("users").
+                                    document(user.getUid());
+
+                            genderRef.update(selectGender);
+
+                            genderTextView.setText(selectedGender);
+
+                        }
+
+
+                        else{
 
                             Map<String, Object> selectGender = new HashMap<>();
                             selectGender.put("Gender", "Female");
