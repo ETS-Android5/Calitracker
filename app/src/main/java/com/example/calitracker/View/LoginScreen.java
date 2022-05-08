@@ -69,6 +69,9 @@ public class LoginScreen extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
 
+    }
 
 }

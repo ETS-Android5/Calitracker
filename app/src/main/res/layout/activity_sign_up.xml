@@ -16,11 +16,12 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="10dp"
         android:autofillHints=""
+        android:imeOptions="actionDone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView4"
@@ -31,6 +32,9 @@
         android:layout_marginEnd="10dp"
         android:text="@string/email"
         android:textSize="12sp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/email_adress_editbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -47,6 +51,9 @@
         android:layout_marginEnd="10dp"
         android:text="@string/last_name"
         android:textSize="12sp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/last_name_editbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -63,6 +70,9 @@
         android:layout_marginEnd="10dp"
         android:text="@string/password"
         android:textSize="12sp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/password_editbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -81,12 +91,13 @@
         android:autofillHints=""
         android:background="@drawable/border"
         android:ems="10"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_name_editbox"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView6"
@@ -97,6 +108,9 @@
         android:layout_marginEnd="10dp"
         android:text="@string/date_of_birth"
         android:textSize="12sp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/date_editbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.006"
@@ -114,12 +128,13 @@
         android:layout_marginEnd="10dp"
         android:autofillHints=""
         android:ems="10"
+        android:imeOptions="actionDone"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/last_name_editbox"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/password_editbox"
@@ -131,12 +146,13 @@
         android:layout_marginEnd="10dp"
         android:autofillHints=""
         android:ems="10"
+        android:imeOptions="actionDone"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_adress_editbox"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/date_editbox"
@@ -157,7 +173,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_editbox"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView"
@@ -168,6 +184,9 @@
         android:gravity="bottom"
         android:text="@string/first_name"
         android:textSize="12sp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/first_name_editbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.006"
@@ -231,7 +250,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="30dp"
-                android:text="@string/create_an_account" />
+                android:text="@string/create_an_account"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"/>
         </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>

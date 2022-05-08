@@ -13,7 +13,10 @@
         style="@style/fill_box_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WELCOME TO CALITRACKER"
+        android:text="@string/welcome_to_calitracker"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,6 +46,9 @@
         android:layout_marginEnd="10dp"
         android:text="@string/email"
         android:textSize="12sp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/email_adress_editbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +64,9 @@
         android:layout_marginEnd="10dp"
         android:text="@string/password"
         android:textSize="12sp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toTopOf="@+id/password_editbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -75,12 +84,13 @@
         android:layout_marginEnd="10dp"
         android:autofillHints=""
         android:ems="10"
+        android:imeOptions="actionDone"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_adress_editbox"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/email_adress_editbox"
@@ -92,12 +102,13 @@
         android:layout_marginEnd="10dp"
         android:autofillHints=""
         android:ems="10"
+        android:imeOptions="actionDone"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout3"
@@ -129,7 +140,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="30dp"
-                android:text="LOG IN" />
+                android:text="@string/log_in"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"/>
         </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -139,22 +153,24 @@
         style="@style/create_login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOG IN"
+        android:text="@string/log_in"
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_editbox" />
+        app:layout_constraintTop_toBottomOf="@+id/password_editbox"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/forgotPassword"
-        android:text="I forgot my password"
+        style="@style/thin_roboto"
+        android:text="@string/i_forgot_my_password"
         app:layout_constraintBottom_toTopOf="@+id/logIntoTheApp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_editbox"
         app:layout_constraintVertical_bias="0.139"
-        style="@style/thin_roboto" />
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

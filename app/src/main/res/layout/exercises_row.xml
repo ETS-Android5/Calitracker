@@ -27,8 +27,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:paddingStart="10dp"
-                android:text="TextView"
-                android:textSize="24dp"
+                android:text="@string/textview"
+                android:textSize="24sp"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,8 +41,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:paddingLeft="5dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textColor="#FFFFFF"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"
                 app:layout_constraintStart_toStartOf="@+id/exercisesLevelTextView"
                 app:layout_constraintTop_toBottomOf="@+id/exercisesLevelTextView" />
 
@@ -57,6 +63,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/play_button"
                 android:forceDarkAllowed="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -64,19 +71,22 @@
                 app:layout_constraintStart_toEndOf="@+id/exercisesLevelTextView"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/circle_play" />
+                app:srcCompat="@drawable/circle_play"
+                tools:ignore="RedundantDescriptionCheck" />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/play_button"
                 android:forceDarkAllowed="false"
                 app:layout_constraintBottom_toBottomOf="@+id/playVideoButton"
                 app:layout_constraintEnd_toEndOf="@+id/playVideoButton"
                 app:layout_constraintStart_toStartOf="@+id/playVideoButton"
                 app:layout_constraintTop_toTopOf="@+id/playVideoButton"
                 app:srcCompat="@drawable/ic_baseline_play_arrow_24"
-                app:tint="#FFFFFF" />
+                app:tint="#FFFFFF"
+                tools:ignore="RedundantDescriptionCheck" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,18 +108,28 @@
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:digits="012345"
+                        android:imeOptions="actionDone"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:digits="012345"
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
 
-                        />
+                        tools:ignore="SpeakableTextPresentCheck"
+                        android:importantForAutofill="no" />
 
                     <TextView
                         android:id="@+id/seriesTextView"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="/5" />
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
+
+                        android:text="@string/_5"
+                        tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
@@ -125,18 +145,27 @@
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:digits="012345"
+                        android:imeOptions="actionDone"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:digits="012345"
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
 
-                        />
+                        tools:ignore="SpeakableTextPresentCheck"
+                        android:importantForAutofill="no" />
 
                     <TextView
                         android:id="@+id/seriesTextView2"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="/5" />
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
+                        android:text="@string/_5"
+                        tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
@@ -151,18 +180,27 @@
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:digits="012345"
+                        android:imeOptions="actionDone"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:digits="012345"
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
 
-                        />
+                        tools:ignore="SpeakableTextPresentCheck"
+                        android:importantForAutofill="no" />
 
                     <TextView
                         android:id="@+id/seriesTextView5"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="/5" />
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
+                        android:text="@string/_5"
+                        tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
@@ -177,18 +215,27 @@
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:digits="012345"
+                        android:imeOptions="actionDone"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:digits="012345"
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
 
-                        />
+                        tools:ignore="SpeakableTextPresentCheck"
+                        android:importantForAutofill="no" />
 
                     <TextView
                         android:id="@+id/seriesTextView4"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="/5" />
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
+                        android:text="@string/_5"
+                        tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
@@ -203,18 +250,27 @@
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:digits="012345"
+                        android:imeOptions="actionDone"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:digits="012345"
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
 
-                        />
+                        tools:ignore="SpeakableTextPresentCheck"
+                        android:importantForAutofill="no" />
 
                     <TextView
                         android:id="@+id/seriesTextView3"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="/5" />
+                        android:shadowDx="-4"
+                        android:shadowDy="-4"
+                        android:shadowRadius="2"
+                        android:text="@string/_5"
+                        tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
             </LinearLayout>

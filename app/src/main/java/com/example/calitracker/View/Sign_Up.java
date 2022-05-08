@@ -1,11 +1,16 @@
 package com.example.calitracker.View;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -52,6 +57,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
             myCalendar.set(Calendar.DAY_OF_MONTH, day);
             updateLabel();
         };
+
 
 
         Objects.requireNonNull(getSupportActionBar()).hide();
@@ -108,7 +114,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
             SignUpDateOfBirth.setBackgroundResource(R.drawable.border);
             return false;
         });
-
+            
         SignUpDateOfBirth.setOnTouchListener((view, motionEvent) -> {
             SignUpMail.setBackgroundResource(R.drawable.border);
             SignUpName.setBackgroundResource(R.drawable.border);
@@ -215,14 +221,6 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
         });
 
 
-
-
-
-
-
-
-
-
     }
     private void updateLabel(){
         String myFormat = "dd/M/yyyy";
@@ -231,4 +229,14 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     }
+// hide keyboard after clicking outside of editbox
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
 }

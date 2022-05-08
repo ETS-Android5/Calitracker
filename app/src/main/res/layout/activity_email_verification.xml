@@ -27,12 +27,16 @@
         style="@style/create_login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         android:text="Yes, I've already done that"
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView13"

@@ -13,7 +13,10 @@
         android:layout_height="50dp"
         android:gravity="center|left"
         android:paddingLeft="10dp"
-        android:text="WEIGHT:" />
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
+        android:text="@string/weight" />
 
     <EditText
         android:id="@+id/WeightEditTextNumberDecimal"
@@ -21,9 +24,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/roboto"
+        android:imeOptions="actionDone"
         android:inputType="numberDecimal"
+        android:minHeight="48dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textView16"
@@ -32,6 +39,9 @@
         android:layout_height="50dp"
         android:gravity="center|left"
         android:paddingLeft="10dp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         android:text="DATE:" />
 
     <EditText
@@ -39,10 +49,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:inputType="date"
-        android:paddingLeft="10dp"
         android:focusable="false"
-        android:textColor="@color/white" />
+        android:fontFamily="@font/roboto"
+        android:imeOptions="actionDone"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </LinearLayout>

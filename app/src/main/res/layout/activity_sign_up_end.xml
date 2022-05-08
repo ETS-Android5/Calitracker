@@ -10,6 +10,9 @@
     <Button
         android:id="@+id/get_Started_Button"
         android:text="GET STARTED"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:layout_constraintVertical_bias="0.213"
-        style="@style/standard_button_style" />
+        style="@style/standard_button_style"
+        />
 
     <TextView
         android:id="@+id/textView28"
@@ -27,6 +31,9 @@
         android:layout_marginTop="30dp"
         android:text="UNLOCK YOUR POTENTIAL"
         android:textSize="18dp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,6 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:text="You're all set. Lets get to work."
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

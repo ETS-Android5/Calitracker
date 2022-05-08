@@ -22,7 +22,7 @@
             <EditText
                 android:id="@+id/heightCmEditText"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -30,14 +30,16 @@
                 android:background="@drawable/border"
                 android:ems="10"
                 android:fontFamily="@font/roboto_bold"
-                android:hint="HEIGHT"
+                android:hint="@string/height"
+                android:imeOptions="actionDone"
                 android:inputType="number"
-                android:textColor="#FFFFFFFF" />
+                android:textColor="#FFFFFFFF"
+                android:importantForAutofill="no" />
 
             <EditText
                 android:id="@+id/weightKgEditText"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -46,8 +48,10 @@
                 android:ems="10"
                 android:fontFamily="@font/roboto_bold"
                 android:hint="WEIGHT"
+                android:imeOptions="actionDone"
                 android:inputType="number"
-                android:textColor="#FFFFFFFF" />
+                android:textColor="#FFFFFFFF"
+                android:importantForAutofill="no" />
 
             <Button
                 android:id="@+id/calculateBmiButton"
@@ -59,7 +63,10 @@
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="#000000"
                 android:fontFamily="@font/roboto_bold"
-                android:text="CALCULATE"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"
+                android:text="@string/calculate"
                 app:cornerRadius="60dp" />
 
             <TextView
@@ -77,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:visibility="invisible" />
         </LinearLayout>
 

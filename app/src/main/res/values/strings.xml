@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Calitracker</string>
     <string name="calitracker">CALITRACKER</string>
-    <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
     <string name="title_activity_sign_up">Sign_Up</string>
     <!-- Strings used for fragments for navigation -->
@@ -306,4 +305,35 @@
 
     </string-array>
     <string name="title_activity_exercises">ExercisesActivity</string>
+    <string name="log_in">LOG IN</string>
+    <string name="i_forgot_my_password">I forgot my password</string>
+    <string name="welcome_to_calitracker">WELCOME TO CALITRACKER</string>
+    <string name="stay_on_track">STAY ON TRACK</string>
+    <string name="here_you_can_enable_or_disable_notifications">Here you can enable or disable notifications.</string>
+    <string name="_4_4">4/4</string>
+    <string name="push_notifications">PUSH NOTIFICATIONS</string>
+    <string name="you_ll_be_updated_on_the_latest_updates_to_content_and_features_specifically_in_the_app">You\'ll be updated on the latest updates to content and features specifically in the app.</string>
+    <string name="female">FEMALE</string>
+    <string name="male">MALE</string>
+    <string name="prefer_not_to_say">PREFER NOT TO SAY</string>
+    <string name="select_your_gender_preference">SELECT YOUR GENDER PREFERENCE</string>
+    <string name="_2_4">2/4</string>
+    <string name="male_sign">Male sign</string>
+    <string name="female_sign">Female sign</string>
+    <string name="select_your_metric">SELECT YOUR METRIC</string>
+    <string name="do_you_lift_in_kgs_or_lbs_select_the_metric_you_re_used_to_and_we_ll_display_your_weights_that_way">Do you lift in KGs or LBs? Select the metric you\'re used to and we’ll display your weights that way.</string>
+    <string name="kg">Kg</string>
+    <string name="lb">Lb</string>
+    <string name="back">BACK</string>
+    <string name="_3_4">3/4</string>
+    <string name="skip">SKIP</string>
+    <string name="weight">WEIGHT:</string>
+    <string name="textview">TextView</string>
+    <string name="_5">/5</string>
+    <string name="play_button">play button</string>
+    <string name="age">AGE</string>
+    <string name="height">HEIGHT</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="weight_and_date">WEIGHT AND DATE</string>
+    <string name="add_weight_button">Add weight button</string>
 </resources>
