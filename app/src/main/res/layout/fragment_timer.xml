@@ -42,6 +42,22 @@
         >
 
         <Button
+            android:id="@+id/time_button_1"
+            style="@style/standard_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowDx="-4"
+            android:shadowDy="-4"
+            android:shadowRadius="2"
+            android:text="1:00"
+            app:cornerRadius="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/time_button_2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/start_timer_button" />
+
+        <Button
             android:id="@+id/stop_timer_button"
             style="@style/standard_button_style"
             android:layout_width="57dp"
@@ -92,6 +108,38 @@
             app:layout_constraintStart_toEndOf="@+id/start_timer_button"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/time_button_2"
+            style="@style/standard_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowDx="-4"
+            android:shadowDy="-4"
+            android:shadowRadius="2"
+            android:text="2:00"
+            app:cornerRadius="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/time_button_3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/time_button_1"
+            app:layout_constraintTop_toBottomOf="@+id/pause_timer_button" />
+
+        <Button
+            android:id="@+id/time_button_3"
+            style="@style/standard_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowDx="-4"
+            android:shadowDy="-4"
+            android:shadowRadius="2"
+            android:text="5:00"
+            app:cornerRadius="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/time_button_2"
+            app:layout_constraintTop_toBottomOf="@+id/stop_timer_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

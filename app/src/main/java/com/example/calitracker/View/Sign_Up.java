@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
@@ -57,6 +58,11 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
             myCalendar.set(Calendar.DAY_OF_MONTH, day);
             updateLabel();
         };
+
+
+
+
+
 
 
 
@@ -125,10 +131,19 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
             return false;
         });
 
-        SignUpDateOfBirth.setOnClickListener(view -> new DatePickerDialog(Sign_Up
-                .this,date,myCalendar.get(Calendar.YEAR),
-                myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
-                .show());
+        SignUpDateOfBirth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               DatePickerDialog datePickerDialog = new DatePickerDialog(Sign_Up.this, date,
+                       myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                       myCalendar.get(Calendar.DAY_OF_MONTH));
+
+
+                        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                        datePickerDialog.show();
+
+            }
+        });
 
 
         // After clicking a "create account" button, it creates a new user.

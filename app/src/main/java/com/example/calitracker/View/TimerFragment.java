@@ -61,6 +61,33 @@ public class TimerFragment extends Fragment {
         Button startButton = (Button) view.findViewById(R.id.start_timer_button);
         Button stopButton = (Button) view.findViewById(R.id.stop_timer_button);
         Button pauseButton = (Button) view.findViewById(R.id.pause_timer_button);
+        Button timerButton1 = (Button)view.findViewById(R.id.time_button_1);
+        Button timerButton2 = (Button)view.findViewById(R.id.time_button_2);
+        Button timerButton5 = (Button)view.findViewById(R.id.time_button_3);
+
+        timerButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTimeLeftInMiliseconds = 60000;
+                updateCountDownText();
+            }
+        });
+
+        timerButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTimeLeftInMiliseconds = 120000;
+                updateCountDownText();
+            }
+        });
+
+        timerButton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTimeLeftInMiliseconds = 300000;
+                updateCountDownText();
+            }
+        });
 
 
 

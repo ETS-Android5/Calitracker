@@ -19,6 +19,20 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView22"
+                style="@style/fill_box_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"
+                android:text="This calculator provides body mass index (BMI) and the corresponding BMI weight status category" />
+
             <EditText
                 android:id="@+id/heightCmEditText"
                 android:layout_width="match_parent"

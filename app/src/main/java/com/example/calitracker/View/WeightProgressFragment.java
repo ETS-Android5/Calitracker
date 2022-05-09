@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.calitracker.Model.EmailAndPass;
 import com.example.calitracker.Model.PointValue;
 import com.example.calitracker.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -75,6 +76,8 @@ public class WeightProgressFragment extends Fragment {
 
         GraphView graphView = (GraphView) view.findViewById(R.id.graph);
         lineGraphSeries = new LineGraphSeries();
+        lineGraphSeries.setDrawDataPoints(true);
+        lineGraphSeries.setDataPointsRadius(10);
         graphView.addSeries(lineGraphSeries);
         graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
             @Override
@@ -90,11 +93,11 @@ public class WeightProgressFragment extends Fragment {
         graphView.getGridLabelRenderer().setNumHorizontalLabels(3);
         graphView.getGridLabelRenderer().setNumVerticalLabels(3);
         graphView.getViewport().setBackgroundColor(Color.WHITE);
-        graphView.getGridLabelRenderer().setGridColor(Color.TRANSPARENT);
         graphView.getViewport().setDrawBorder(true);
         graphView.getViewport().setBorderColor(Color.BLACK);
         graphView.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
         graphView.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +118,7 @@ public class WeightProgressFragment extends Fragment {
                 textView1.setLayoutParams(layoutParams);
                 textView1.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
                 Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.roboto);
-                textView1.setText(weight + "kg" + "       " + date);
+                textView1.setText(weight + "KG" + "       " + date);
                 return textView1;
 
             }
@@ -149,10 +152,13 @@ public class WeightProgressFragment extends Fragment {
                 dateEditText.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
-                        new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR),
+                        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
+                                date, myCalendar.get(Calendar.YEAR),
                                 myCalendar.get(Calendar.MONTH), myCalendar
-                                .get(Calendar.DAY_OF_MONTH)).show();
+                                .get(Calendar.DAY_OF_MONTH));
+                        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                        datePickerDialog.show();
+
                     }
                 });
 
@@ -221,6 +227,8 @@ public class WeightProgressFragment extends Fragment {
             }
 
             private TextView createTextView(String weight, String date) {
+
+
                 final LinearLayout.LayoutParams layoutParams = new LinearLayout
                         .LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -229,7 +237,7 @@ public class WeightProgressFragment extends Fragment {
                 textView1.setLayoutParams(layoutParams);
                 textView1.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
                 Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.roboto);
-                textView1.setText(weight + "kg" + "       " + date);
+                textView1.setText(weight + "KG" + "       " + date);
                 return textView1;
             }
 

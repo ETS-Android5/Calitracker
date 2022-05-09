@@ -192,13 +192,13 @@
         <item>dcJVA2sBPqw</item>
         <item>DWx28SKtmMA</item>
         <item>DWx28SKtmMA</item>
-        <item>l3ySVKYVJ8</item>
+        <item>RtzT6CD3DWw</item>
         <item>J0DnG1_S92I</item>
         <item>J0DnG1_S92I</item>
         <item>o1abTRdwpUs</item>
         <item>SKPab2YC8BE</item>
-        <item>t6n2AUQQ0</item>
-        <item>t6n2AUQQ0</item>
+        <item>QuaOc1mFcqs</item>
+        <item>3_t6n2AUQQ0</item>
         <item>lkHe72iH_1I</item>
         <item>mctH5fyzqqo</item>
         <item>ReKZry7JQEQ</item>
@@ -336,4 +336,22 @@
     <string name="calculate">CALCULATE</string>
     <string name="weight_and_date">WEIGHT AND DATE</string>
     <string name="add_weight_button">Add weight button</string>
+    <string name="info2">
+        <ul>
+            <li>INCREASE BY NO MORE THAN ONE REP EVERY SESSION\n\n</li>
+            <li>WHEN YOU CAN MANAGE 5 SETS OF 5 REPS, MOVE ON TO THE NEXT EXERCISE IN THE PROGRESSION\n\n</li>
+            <li>ALTERNATE BETWEEN PUSH UPS AND DIPS. DO PUSH UPS ONE SESSION, THEN DIPS IN THE NEXT SESSION\n\n</li>
+            <li>REFER TO THE VIDEOS IN THE APPLICATION, BUT IF THEY ARE NOT AVAILABLE, YOU CAN VISIT STARTBODYWEIGHT.COM WEBSITE FOR FULL DESCRIPTION OF EACH EXERCISE</li>
+
+        </ul>
+
+        </string>
+    <string name="info">
+        <ul><li>START WITH A QUICK 5 MIN WARM UP FOLLOWED BY DYNAMIC STRETCHES</li> \n\n
+         <li>PERFORM 5 SETS OF 5 REPETITIONS FOR 6 BASIC EXERCISES\n\n</li>
+         <li>REST BETWEEN 1 AND 2 MIN BETWEEN EACH SET\n\n</li>
+         <li>FINISH WITH 10 MIN OF STATIC STRETCHING\n\n</li>
+        </ul>
+    </string>
+
 </resources>
