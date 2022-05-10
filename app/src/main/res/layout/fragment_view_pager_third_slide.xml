@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.ViewPager.ViewPagerThirdSlideFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView37"
+            style="@style/fill_box_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowDx="-4"
+            android:shadowDy="-4"
+            android:shadowRadius="2"
+            android:text="EXPLORE OUR TRAINING TOOLS" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:shadowDx="-4"
+            android:shadowDy="-4"
+            android:shadowRadius="2"
+            android:fontFamily="@font/roboto"
+            android:text="We've prepared few useful tools to help you with your journey, these are different calculators and a timer!"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</FrameLayout>

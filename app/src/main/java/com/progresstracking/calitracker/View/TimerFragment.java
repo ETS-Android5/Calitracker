@@ -63,6 +63,10 @@ public class TimerFragment extends Fragment {
         timerButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mTimerRunning){
+                    mCountDownTimer.cancel();
+                }
+                mTimerRunning = false;
                 mTimeLeftInMiliseconds = 60000;
                 updateCountDownText();
             }
@@ -71,6 +75,10 @@ public class TimerFragment extends Fragment {
         timerButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mTimerRunning){
+                    mCountDownTimer.cancel();
+                }
+                mTimerRunning = false;
                 mTimeLeftInMiliseconds = 120000;
                 updateCountDownText();
             }
@@ -79,6 +87,10 @@ public class TimerFragment extends Fragment {
         timerButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mTimerRunning){
+                    mCountDownTimer.cancel();
+                }
+                mTimerRunning = false;
                 mTimeLeftInMiliseconds = 300000;
                 updateCountDownText();
             }
