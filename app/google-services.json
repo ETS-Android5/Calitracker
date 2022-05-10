@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "245047574164",
-    "firebase_url": "https://calitracker-acbd6-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "calitracker-acbd6",
-    "storage_bucket": "calitracker-acbd6.appspot.com"
+    "project_number": "352810153671",
+    "firebase_url": "https://calitracker-6b935-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "calitracker-6b935",
+    "storage_bucket": "calitracker-6b935.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:245047574164:android:b97c3f548d011a0c6f7e81",
+        "mobilesdk_app_id": "1:352810153671:android:a4c400f49a9fb3b0bb70e2",
         "android_client_info": {
-          "package_name": "com.example.calitracker"
+          "package_name": "com.progresstracking.calitracker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "245047574164-hes5nbchlg9tpt0tkk05fnabl8t4uf6s.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.calitracker",
-            "certificate_hash": "6b49b7db639d6a2bece7da9607621497ff0579d4"
-          }
-        },
-        {
-          "client_id": "245047574164-r5p35ctcesb8mfqttjqn02v46ddt5h26.apps.googleusercontent.com",
+          "client_id": "352810153671-uaksjt42a6h5af7i01gbruugg7kp59qs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAM5sFtl5lVCkos0qrfnPya-u44h05QMuk"
+          "current_key": "AIzaSyCZE92CtqGY8GSm5zB0DiPiYvCOdmuNguk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "245047574164-r5p35ctcesb8mfqttjqn02v46ddt5h26.apps.googleusercontent.com",
+              "client_id": "352810153671-uaksjt42a6h5af7i01gbruugg7kp59qs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
