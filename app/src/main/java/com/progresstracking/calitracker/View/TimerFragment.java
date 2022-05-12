@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.progresstracking.calitracker.R;
@@ -59,6 +60,14 @@ public class TimerFragment extends Fragment {
         Button timerButton1 = (Button)view.findViewById(R.id.time_button_1);
         Button timerButton2 = (Button)view.findViewById(R.id.time_button_2);
         Button timerButton5 = (Button)view.findViewById(R.id.time_button_3);
+
+
+
+
+
+
+
+
 
         timerButton1.setOnClickListener(new View.OnClickListener() {
             @Override

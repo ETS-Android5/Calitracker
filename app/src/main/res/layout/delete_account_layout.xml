@@ -1,70 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1D1D1B"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textView40"
         style="@style/fill_box_textview"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center|left"
-        android:paddingLeft="10dp"
         android:shadowDx="-4"
         android:shadowDy="-4"
         android:shadowRadius="2"
-        android:text="@string/weight" />
-
-    <EditText
-        android:id="@+id/WeightEditTextNumberDecimal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:imeOptions="actionDone"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:gravity="center"
+        android:text="If you want to delete your account, please provide your credentials" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textView38"
         style="@style/fill_box_textview"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center|left"
-        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
         android:shadowDx="-4"
         android:shadowDy="-4"
         android:shadowRadius="2"
-        android:text="DATE:" />
+        android:layout_marginEnd="10dp"
+        android:paddingLeft="10dp"
+        android:text="EMAIL" />
 
     <EditText
-        android:id="@+id/WeightDateEditTextDate"
+        android:id="@+id/emailDeleteAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
-        android:focusable="false"
         android:fontFamily="@font/roboto"
-        android:imeOptions="actionDone"
-        android:inputType="date"
-        android:minHeight="48dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/white"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFFFF" />
 
+    <TextView
+        android:id="@+id/textView39"
+        style="@style/fill_box_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:shadowDx="-4"
+        android:shadowDy="-4"
+        android:shadowRadius="2"
+        android:layout_marginEnd="10dp"
+        android:paddingLeft="10dp"
+        android:text="PASSWORD" />
+
+    <EditText
+        android:id="@+id/passwordDeleteAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF" />
 </LinearLayout>

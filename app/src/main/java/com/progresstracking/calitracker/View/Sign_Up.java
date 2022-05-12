@@ -5,16 +5,22 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.progresstracking.calitracker.Model.EmailAndPass;
@@ -36,6 +42,8 @@ public class Sign_Up extends AppCompatActivity {
 
 EditText SignUpMail,SignUpPass,SignUpName,SignUpLastName,SignUpDateOfBirth;
 Button SignUpButton;
+TextView privacyPolicyTV;
+CheckBox privacyPolicyCheckBox;
 ImageView GoBackArrow;
 private FirebaseAuth auth;
 final Calendar myCalendar = Calendar.getInstance();
@@ -58,9 +66,9 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
         };
 
 
-
-
-
+        privacyPolicyCheckBox = findViewById(R.id.checkBoxPrivacyPolicy);
+        privacyPolicyTV = findViewById(R.id.textViewPrivacyPolicy);
+        privacyPolicyTV.setMovementMethod(LinkMovementMethod.getInstance());
 
 
 
@@ -73,6 +81,9 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
         SignUpLastName = findViewById(R.id.last_name_editbox);
         SignUpDateOfBirth = findViewById(R.id.date_editbox);
         GoBackArrow = findViewById(R.id.go_back_arrow);
+
+
+
 
 
         GoBackArrow.setOnClickListener(view -> {
@@ -165,7 +176,13 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                 Toast.makeText(getApplicationContext(),
                         "Please enter your Password",Toast.LENGTH_SHORT).show();
 
+            }else if(!privacyPolicyCheckBox.isChecked()){
+                Toast.makeText(getApplicationContext(),
+                        "Please read and accept our Privacy Policy in order to register your account",
+                        Toast.LENGTH_LONG).show();
             }
+
+
             else if(pass.length() == 0){
                 Toast.makeText(getApplicationContext(),
                         "Please enter your Password",Toast.LENGTH_SHORT).show();
@@ -218,6 +235,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                                         user1.put("LastName", lastName);
                                         user1.put("Email", email);
                                         user1.put("DateOfBirth", dateOfBirth);
+                                        user1.put("PrivacyPolicyAccepted", true);
                                         db.collection("users").document(user.getUid())
                                                 .set(user1);
 

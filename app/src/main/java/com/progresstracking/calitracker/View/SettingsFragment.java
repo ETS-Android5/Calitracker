@@ -1,23 +1,31 @@
 package com.progresstracking.calitracker.View;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.progresstracking.calitracker.Model.EmailAndPass;
 import com.progresstracking.calitracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -57,6 +65,8 @@ public class SettingsFragment extends Fragment {
         Button measureButton = (Button)view.findViewById(R.id.settingsMeasureButton);
         Button dateOfBirthButton = (Button)view.findViewById(R.id.settingsDateOfBirthButton);
         Button logOutButton = (Button)view.findViewById(R.id.settingsLogOutButton);
+        Button privacyPolicyButton = (Button) view.findViewById(R.id.settingsPrivacyPolicy);
+        Button deleteAccountButton = (Button) view.findViewById(R.id.deleteAccountButton);
 
         Switch pushSwitch = (Switch)view.findViewById(R.id.settingsNotificationsSwitch);
         Switch screenLockSwitch = (Switch)view.findViewById(R.id.screenLockSwitch);
@@ -72,6 +82,108 @@ public class SettingsFragment extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
+
+
+        deleteAccountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDeleteDialog();
+
+            }
+
+            private void showDeleteDialog(){
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),
+                        R.style.AlertDialogTheme);
+                final Context context = builder.getContext();
+                final LayoutInflater layoutInflater = LayoutInflater.from(context);
+                final View view = inflater.inflate(R.layout.delete_account_layout,
+                        null, false);
+
+                final EditText emailEditText = (EditText) view
+                        .findViewById(R.id.emailDeleteAccount);
+                final EditText passEditText = (EditText) view
+                        .findViewById(R.id.passwordDeleteAccount);
+
+
+                builder.setTitle("Deleting account");
+
+                builder.setPositiveButton("DELETE ACCOUNT", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+
+                        if (TextUtils.isEmpty(emailEditText.getText().toString()) || TextUtils
+                                .isEmpty(passEditText.getText().toString())) {
+
+                            Toast.makeText(getActivity(), "Please provide email and password",
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+
+                            FirebaseUser user = auth.getCurrentUser();
+                            String email = emailEditText.getText().toString();
+                            String pass = passEditText.getText().toString();
+
+                            AuthCredential credential = EmailAuthProvider
+                                    .getCredential(email,pass);
+                            user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Log.d("TAG", "User re-authenticated.");
+                                }
+                            });
+
+                            user.delete();
+
+
+
+
+                            DocumentReference userRef = db.collection("users").
+                                    document(user.getUid());
+
+                            userRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(getActivity(),"Account deleted successfully",
+                                            Toast.LENGTH_LONG).show();
+
+                                    Intent intent = new Intent(getActivity(), LoginScreen.class);
+                                    startActivity(intent);
+                                }
+                            });
+
+
+                        }
+
+
+                    }
+                });
+
+                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.setCancelable(false);
+                builder.setView(view);
+                builder.show();
+            }
+        });
+
+
+
+        privacyPolicyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://calitracker-6b935.web.app"));
+                startActivity(intent);
+            }
+        });
 
 
         

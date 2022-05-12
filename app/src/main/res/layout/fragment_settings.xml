@@ -172,6 +172,46 @@
                 app:layout_constraintTop_toBottomOf="@+id/button4" />
 
             <Button
+                android:id="@+id/settingsPrivacyPolicy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:height="60dp"
+                android:backgroundTint="#1D1B1B"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"
+                android:text="PRIVACY POLICY"
+                android:textAlignment="viewStart"
+                app:icon="@drawable/ic_outline_policy_24"
+                app:iconGravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+            <Button
+                android:id="@+id/deleteAccountButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:height="60dp"
+                android:backgroundTint="#1D1B1B"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="2"
+                android:text="DELETE ACCOUNT"
+                android:textAlignment="viewStart"
+                app:icon="@drawable/ic_outline_delete_forever_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsLogOutButton" />
+
+            <Button
                 android:id="@+id/settingsLogOutButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -180,17 +220,17 @@
                 android:layout_marginEnd="10dp"
                 android:height="60dp"
                 android:backgroundTint="#1D1B1B"
-                android:text="LOG OUT"
                 android:shadowDx="-4"
                 android:shadowDy="-4"
                 android:shadowRadius="2"
+                android:text="LOG OUT"
                 android:textAlignment="viewStart"
                 app:icon="@drawable/ic_bx_log_out"
                 app:iconGravity="start"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button3" />
+                app:layout_constraintTop_toBottomOf="@+id/settingsPrivacyPolicy" />
 
             <TextView
                 android:id="@+id/genderButtonTextView"
