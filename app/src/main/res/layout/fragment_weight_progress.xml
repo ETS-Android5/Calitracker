@@ -57,6 +57,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/delete_weight_floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_delete_24"
+            app:layout_constraintBottom_toTopOf="@+id/add_weight_floatingActionButton"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <TextView
             android:id="@+id/textView17"
             style="@style/fill_box_textview"

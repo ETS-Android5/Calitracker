@@ -137,7 +137,8 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                        myCalendar.get(Calendar.DAY_OF_MONTH));
 
 
-                        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis() - 568025136000L);
+
                         datePickerDialog.show();
 
             }

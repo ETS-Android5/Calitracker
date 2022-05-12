@@ -70,6 +70,8 @@ public class WeightProgressFragment extends Fragment {
 
         FloatingActionButton floatingActionButton = (FloatingActionButton) view
                 .findViewById(R.id.add_weight_floatingActionButton);
+        FloatingActionButton floatingDeleteActionButton = (FloatingActionButton) view
+                .findViewById(R.id.delete_weight_floatingActionButton);
         TextView textView = new TextView(getActivity());
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.linearLayoutWeightProgress);
 
@@ -99,6 +101,57 @@ public class WeightProgressFragment extends Fragment {
 
 
 
+        floatingDeleteActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                showDeleteDialog();
+
+            }
+
+
+
+            private void showDeleteDialog(){
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),
+                        R.style.AlertDialogTheme);
+                builder.setMessage("Are you sure that you want to delete all the data?")
+                        .setTitle("Deleting data");
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        linearLayout.setVisibility(View.INVISIBLE);
+
+                        String id = user.getUid();
+                        reference.child(id).removeValue();
+
+
+
+
+
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+
+
+                builder.show();
+            }
+
+
+
+
+        });
+
+
+
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,6 +174,8 @@ public class WeightProgressFragment extends Fragment {
                 return textView1;
 
             }
+
+
 
 
             private void showDialog() {
@@ -185,7 +240,7 @@ public class WeightProgressFragment extends Fragment {
                                         int y = Integer.parseInt(weightEditText.getText().toString());
                                         PointValue pointValue = new PointValue(x, y);
                                         reference.child(id).child(randomId).setValue(pointValue);
-
+                                        linearLayout.setVisibility(View.VISIBLE);
                                     } catch (ParseException e) {
                                         e.printStackTrace();
                                     }
