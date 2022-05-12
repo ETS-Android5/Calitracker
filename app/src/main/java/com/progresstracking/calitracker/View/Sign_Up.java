@@ -181,6 +181,25 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                         "Please read and accept our Privacy Policy in order to register your account",
                         Toast.LENGTH_LONG).show();
             }
+            else if(TextUtils.isEmpty(email) && TextUtils.isEmpty(pass) && TextUtils.isEmpty(name)
+                    && TextUtils.isEmpty(lastName) && TextUtils.isEmpty(dateOfBirth)){
+                Toast.makeText(getApplicationContext(),"Please provide data",
+                        Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+            }
 
 
             else if(pass.length() == 0){
