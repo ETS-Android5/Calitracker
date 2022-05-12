@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#1D1D1B"
     android:orientation="vertical"
-    tools:context="com.progresstracking.calitracker.View.Sign_Up">
+    tools:context="com.cuyer.calitracker.View.Sign_Up">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/AppBarLayout"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1D1D1B"
-    tools:context="com.progresstracking.calitracker.View.LogIn">
+    tools:context="com.cuyer.calitracker.View.LogIn">
 
     <TextView
         android:id="@+id/textView2"

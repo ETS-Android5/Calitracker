@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.progresstracking.calitracker">
+    package="com.cuyer.calitracker">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -11,48 +11,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calitracker">
         <activity
-            android:name="com.progresstracking.calitracker.View.exercises"
+            android:name="com.cuyer.calitracker.View.exercises"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.SignUpEnd"
+            android:name="com.cuyer.calitracker.View.SignUpEnd"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.SignUpPushNotifications"
+            android:name="com.cuyer.calitracker.View.SignUpPushNotifications"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.SignUpSelectMetric"
+            android:name="com.cuyer.calitracker.View.SignUpSelectMetric"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.SignUpSelectGender"
+            android:name="com.cuyer.calitracker.View.SignUpSelectGender"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.EmailVerification"
+            android:name="com.cuyer.calitracker.View.EmailVerification"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.LogIn"
+            android:name="com.cuyer.calitracker.View.LogIn"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.HomeActivity"
+            android:name="com.cuyer.calitracker.View.HomeActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.Sign_Up"
+            android:name="com.cuyer.calitracker.View.Sign_Up"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="com.progresstracking.calitracker.View.LoginScreen"
+            android:name="com.cuyer.calitracker.View.LoginScreen"
             android:screenOrientation="portrait"
             android:exported="false"
             android:theme="@style/loginScreenTheme" />
         <activity
-            android:name="com.progresstracking.calitracker.View.MainActivity"
+            android:name="com.cuyer.calitracker.View.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
@@ -63,7 +63,7 @@
         </activity>
 
         <service
-            android:name="com.progresstracking.calitracker.Controller.PushNotificationService"
+            android:name="com.cuyer.calitracker.Controller.PushNotificationService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"></action>

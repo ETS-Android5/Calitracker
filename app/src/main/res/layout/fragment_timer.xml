@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1D1D1B"
-    tools:context="com.progresstracking.calitracker.View.TimerFragment">
+    tools:context="com.cuyer.calitracker.View.TimerFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

@@ -1,4 +1,4 @@
-package com.progresstracking.calitracker;
+package com.cuyer.calitracker;
 
 import org.junit.Test;
 

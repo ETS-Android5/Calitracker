@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "352810153671",
-    "firebase_url": "https://calitracker-6b935-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "calitracker-6b935",
-    "storage_bucket": "calitracker-6b935.appspot.com"
+    "project_number": "1095567804802",
+    "firebase_url": "https://calitracker-93880-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "calitracker-93880",
+    "storage_bucket": "calitracker-93880.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:352810153671:android:a4c400f49a9fb3b0bb70e2",
+        "mobilesdk_app_id": "1:1095567804802:android:15e87f1884f623752a279b",
         "android_client_info": {
-          "package_name": "com.progresstracking.calitracker"
+          "package_name": "com.cuyer.calitracker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "352810153671-uaksjt42a6h5af7i01gbruugg7kp59qs.apps.googleusercontent.com",
+          "client_id": "1095567804802-3h9h8p7didfi2hnf2906l15uut33lu91.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZE92CtqGY8GSm5zB0DiPiYvCOdmuNguk"
+          "current_key": "AIzaSyCjkJkoovHxbEFipzOGiQf80IANjuLFqiI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "352810153671-uaksjt42a6h5af7i01gbruugg7kp59qs.apps.googleusercontent.com",
+              "client_id": "1095567804802-3h9h8p7didfi2hnf2906l15uut33lu91.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
