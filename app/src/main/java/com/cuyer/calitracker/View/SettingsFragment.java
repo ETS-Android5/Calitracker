@@ -100,7 +100,7 @@ public class SettingsFragment extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
 
 
-        InterstitialAd.load(getActivity(),"ca-app-pub-3940256099942544/1033173712", adRequest,
+        InterstitialAd.load(getActivity(),"ca-app-pub-4286204280518303/3252163303", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -228,7 +228,7 @@ public class SettingsFragment extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("https://calitracker-6b935.web.app"));
+                intent.setData(Uri.parse("https://calitracker-93880.web.app"));
                 startActivity(intent);
             }
         });
