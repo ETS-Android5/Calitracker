@@ -11,6 +11,8 @@
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/bottom_nav_icon_color_selector.xml" value="0.1905" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/circle_background.xml" value="0.3485" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/circle_play.xml" value="0.3485" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/circle_shape.xml" value="0.338" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/circular_progress_bar.xml" value="0.338" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/color_selector.xml" value="0.3485" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/create_account_button.xml" value="0.3485" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/drawable/ic_akar_icons_cake.xml" value="0.3485" />
@@ -66,12 +68,12 @@
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_progress.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_progress_nav.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_second.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_settings.xml" value="0.5" />
-        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_timer.xml" value="0.5" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_timer.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_view_pager_first_slide.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_view_pager_second_slide.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_view_pager_third_slide.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_weight_progress.xml" value="0.5" />
+        <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/fragment_weight_progress.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/info_layout.xml" value="0.33" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/my_row.xml" value="0.25" />
         <entry key="..\:/Users/kryst/AndroidStudioProjects/Calitracker/app/src/main/res/layout/popup.xml" value="0.25" />

@@ -10,6 +10,8 @@ import android.view.inputmethod.InputMethodManager;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.progresstracking.calitracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     BottomNavigationView bottomNavigationView;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    AdView mADView;
 
     HomeFragment homeFragment = new HomeFragment();
     ProgressFragment progressFragment = new ProgressFragment();
@@ -41,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Objects.requireNonNull(getSupportActionBar()).hide();
         auth = FirebaseAuth.getInstance();
+
 
 
 

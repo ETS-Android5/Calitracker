@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.progresstracking.calitracker.R;
 
 import java.util.Locale;
@@ -60,12 +62,7 @@ public class TimerFragment extends Fragment {
         Button timerButton1 = (Button)view.findViewById(R.id.time_button_1);
         Button timerButton2 = (Button)view.findViewById(R.id.time_button_2);
         Button timerButton5 = (Button)view.findViewById(R.id.time_button_3);
-
-
-
-
-
-
+        ProgressBar progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
 
 
 
@@ -138,12 +135,25 @@ public class TimerFragment extends Fragment {
         return view;
     }
 
+
+
+
+
         private void startTimer(){
                 mEndTime = System.currentTimeMillis() + mTimeLeftInMiliseconds;
+            int max = (int) (mTimeLeftInMiliseconds/1000);
             mCountDownTimer = new CountDownTimer(mTimeLeftInMiliseconds, 1000) {
                 @Override
                 public void onTick(long l) {
                     mTimeLeftInMiliseconds = l;
+
+                    ProgressBar progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
+                    int progress = (int) (mTimeLeftInMiliseconds/1000);
+
+                    progressBar.setMax(max);
+                    progressBar.setProgress(max-progress);
+
+
                     updateCountDownText();
                 }
 
@@ -181,10 +191,15 @@ public class TimerFragment extends Fragment {
             if(mTimerRunning){
                 mCountDownTimer.cancel();
             }
+            ProgressBar progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
+            progressBar.setProgress(0);
             mTimeLeftInMiliseconds = START_TIME_IN_MILIS;
             mTimerRunning = false;
             updateCountDownText();
         }
+
+
+
 
 
 

@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/exercisesNameTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/roboto"
@@ -63,14 +63,12 @@
                 android:id="@+id/playVideoButton"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginEnd="20dp"
                 android:contentDescription="@string/play_button"
                 android:forceDarkAllowed="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.356"
-                app:layout_constraintStart_toStartOf="@+id/exercisesLevelTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.108"
+                app:layout_constraintBottom_toBottomOf="@+id/exercisesCheckBox"
+                app:layout_constraintEnd_toStartOf="@+id/exercisesCheckBox"
+                app:layout_constraintTop_toTopOf="@+id/exercisesCheckBox"
                 app:srcCompat="@drawable/circle_play"
                 tools:ignore="RedundantDescriptionCheck" />
 

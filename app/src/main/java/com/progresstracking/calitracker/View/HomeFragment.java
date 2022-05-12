@@ -3,6 +3,7 @@ package com.progresstracking.calitracker.View;
 import android.app.AlertDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.progresstracking.calitracker.Controller.recyclerViewAdapter;
 import com.progresstracking.calitracker.R;
 
@@ -43,6 +49,18 @@ public class HomeFragment extends Fragment {
 
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdView mADView = (AdView)view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mADView.loadAd(adRequest);
+        mADView.bringToFront();
 
 
 

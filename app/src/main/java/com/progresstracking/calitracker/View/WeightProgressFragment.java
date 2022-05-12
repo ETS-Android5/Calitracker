@@ -24,6 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.progresstracking.calitracker.Model.PointValue;
 import com.progresstracking.calitracker.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -66,6 +68,7 @@ public class WeightProgressFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_weight_progress, container,
                 false);
+
 
 
         FloatingActionButton floatingActionButton = (FloatingActionButton) view
