@@ -29,8 +29,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:contentDescription="@string/video_of_a_man_doing_pull_ups" />
 
     <TextView
         android:id="@+id/calitracker"
