@@ -93,7 +93,7 @@ public class SettingsFragment extends Fragment {
         FirebaseUser user = auth.getCurrentUser();
 
 
-        /*MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
+        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {}
         });
@@ -126,7 +126,7 @@ public class SettingsFragment extends Fragment {
                         Log.i("TAG", loadAdError.getMessage());
                         mInterstitialAd = null;
                     }
-                });*/
+                });
 
 
 
