@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        AdView mADView = (AdView)view.findViewById(R.id.adView);
+       AdView mADView = (AdView)view.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mADView.loadAd(adRequest);
         mADView.bringToFront();

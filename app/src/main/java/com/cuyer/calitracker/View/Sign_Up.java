@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -78,6 +79,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
         SignUpLastName = findViewById(R.id.last_name_editbox);
         SignUpDateOfBirth = findViewById(R.id.date_editbox);
         GoBackArrow = findViewById(R.id.go_back_arrow);
+
 
 
 
@@ -197,6 +199,8 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                 
 
             }
+
+
 
 
             else if(pass.length() == 0){

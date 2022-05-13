@@ -561,6 +561,20 @@ public class SettingsFragment extends Fragment {
 
                                 if(document.get("LockScreen").equals(true)){
                                     screenLockSwitch.setChecked(true);
+                                }else if(document.get("LockScreen") == null){
+
+                                    Map<String, Object> lockScreen = new HashMap<>();
+                                    lockScreen.put("LockScreen", false);
+
+
+                                    FirebaseUser user = auth.getCurrentUser();
+                                    DocumentReference lockRef = db.collection("users").
+                                            document(user.getUid());
+
+                                    lockRef.update(lockScreen);
+
+                                    screenLockSwitch.setChecked(false);
+
                                 }else{
                                     screenLockSwitch.setChecked(false);
                                 }
