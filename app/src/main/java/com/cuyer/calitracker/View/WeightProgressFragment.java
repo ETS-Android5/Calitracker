@@ -43,9 +43,11 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -53,19 +55,26 @@ import java.util.Date;
 import java.util.Locale;
 
 public class WeightProgressFragment extends Fragment {
-
+    int style = DateFormat.MEDIUM;
+    Date date = new Date();
+    DateFormat df;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    GraphView graphView;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DatabaseReference reference = database.getReference("users");
     LineGraphSeries lineGraphSeries;
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+    SimpleDateFormat sdf2 = new SimpleDateFormat("MMM dd", Locale.ENGLISH);
     final Calendar myCalendar = Calendar.getInstance();
     FirebaseAuth auth;
+
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        df = DateFormat.getDateInstance(style, Locale.getDefault());
 
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
@@ -83,29 +92,42 @@ public class WeightProgressFragment extends Fragment {
         TextView textView = new TextView(getActivity());
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.linearLayoutWeightProgress);
 
-        GraphView graphView = (GraphView) view.findViewById(R.id.graph);
+        graphView = view.findViewById(R.id.graph);
+        //GraphView graphView = (GraphView) view.findViewById(R.id.graph);
         lineGraphSeries = new LineGraphSeries();
         lineGraphSeries.setDrawDataPoints(true);
+        lineGraphSeries.setDrawBackground(true);
+        lineGraphSeries.setBackgroundColor(Color.argb(60,95,226,156));
         lineGraphSeries.setDataPointsRadius(10);
+        lineGraphSeries.setThickness(6);
         graphView.addSeries(lineGraphSeries);
+
+
+
         graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if (isValueX) {
-                    return sdf.format(new Date((long) value));
+                    return sdf2.format(new Date((long) value));
                 } else {
                     return super.formatLabel(value, isValueX);
                 }
 
             }
         });
-        graphView.getGridLabelRenderer().setNumHorizontalLabels(3);
-        graphView.getGridLabelRenderer().setNumVerticalLabels(3);
+        graphView.getGridLabelRenderer().setNumHorizontalLabels(5);
+        graphView.getGridLabelRenderer().setNumVerticalLabels(5);
         graphView.getViewport().setBackgroundColor(Color.WHITE);
         graphView.getViewport().setDrawBorder(true);
         graphView.getViewport().setBorderColor(Color.BLACK);
         graphView.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
         graphView.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+        graphView.getGridLabelRenderer().setPadding(40);
+
+
+
+
+
 
 
 
@@ -160,9 +182,6 @@ public class WeightProgressFragment extends Fragment {
                         reference.child(id).removeValue();
 
 
-
-
-
                     }
                 });
 
@@ -209,7 +228,7 @@ public class WeightProgressFragment extends Fragment {
             }
 
 
-
+                PointValue pointValue;
 
             private void showDialog() {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),
@@ -231,7 +250,7 @@ public class WeightProgressFragment extends Fragment {
                         myCalendar.set(Calendar.YEAR, year);
                         myCalendar.set(Calendar.MONTH, month);
                         myCalendar.set(Calendar.DAY_OF_MONTH, day);
-                        dateEditText.setText(sdf.format(myCalendar.getTime()));
+                        dateEditText.setText(df.format(myCalendar.getTime()));
                     }
                 };
 
@@ -254,21 +273,31 @@ public class WeightProgressFragment extends Fragment {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                String id = user.getUid();
+
+
+
                                 if (TextUtils.isEmpty(weightEditText.getText().toString()) || TextUtils
                                         .isEmpty(dateEditText.getText().toString())) {
 
                                     Toast.makeText(getActivity(), "Please provide weight and date",
                                             Toast.LENGTH_SHORT).show();
 
-                                } else {
+
+
+
+
+                                }
+
+                                else {
                                     linearLayout.addView(createNewTextView(weightEditText.getText().toString(),
                                             dateEditText.getText().toString()));
 
-                                    String id = user.getUid();
+
                                     String randomId = reference.push().getKey();
 
                                     try {
-                                        Date date = sdf.parse(dateEditText.getText().toString());
+                                        Date date = df.parse(dateEditText.getText().toString());
                                         long x = date.getTime();
                                         int y = Integer.parseInt(weightEditText.getText().toString());
                                         PointValue pointValue = new PointValue(x, y);
@@ -306,10 +335,15 @@ public class WeightProgressFragment extends Fragment {
                     PointValue pointValue = myDataSnapshot.getValue(PointValue.class);
                     dp[index] = new DataPoint(pointValue.getxValue(), pointValue.getyValue());
                     String str1 = Integer.toString(pointValue.getyValue());
-                    String str2 = sdf.format(new Date(pointValue.getxValue()));
+                    String str2 = df.format(new Date(pointValue.getxValue()));
                     linearLayout.addView(createTextView(str1, str2));
                     index++;
+
                 }
+
+
+
+
 
             }
 
@@ -361,8 +395,22 @@ public class WeightProgressFragment extends Fragment {
                     index++;
                 }
 
-
                 lineGraphSeries.resetData(dp);
+
+                graphView.findViewById(R.id.graph);
+
+                if(index > 0) {
+                    graphView.getViewport().setMinX(dp[0].getX());
+                    graphView.getViewport().setMaxX(dp[index - 1].getX());
+                    graphView.getViewport().setXAxisBoundsManual(true);
+
+                }
+
+
+
+
+
+
             }
 
             @Override

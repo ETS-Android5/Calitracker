@@ -4,6 +4,7 @@ public class PointValue {
     long xValue;
     int yValue;
 
+
     public PointValue() {
     }
 

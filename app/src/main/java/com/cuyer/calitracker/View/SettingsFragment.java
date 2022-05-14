@@ -100,7 +100,7 @@ public class SettingsFragment extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
 
 
-        InterstitialAd.load(getActivity(),"ca-app-pub-4286204280518303/3252163303", adRequest,
+        InterstitialAd.load(getActivity(),"ca-app-pub-3940256099942544/1033173712", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
