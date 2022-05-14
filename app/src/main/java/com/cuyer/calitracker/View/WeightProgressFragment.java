@@ -115,14 +115,29 @@ public class WeightProgressFragment extends Fragment {
 
             }
         });
-        graphView.getGridLabelRenderer().setNumHorizontalLabels(5);
-        graphView.getGridLabelRenderer().setNumVerticalLabels(5);
+        graphView.getGridLabelRenderer().setNumHorizontalLabels(4);
+        graphView.getGridLabelRenderer().setNumVerticalLabels(4);
         graphView.getViewport().setBackgroundColor(Color.WHITE);
         graphView.getViewport().setDrawBorder(true);
         graphView.getViewport().setBorderColor(Color.BLACK);
         graphView.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
         graphView.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
         graphView.getGridLabelRenderer().setPadding(40);
+        graphView.getGridLabelRenderer().setHorizontalLabelsAngle(50);
+
+
+
+        // activate horizontal zooming and scrolling
+        graphView.getViewport().setScalable(true);
+
+// activate horizontal scrolling
+        graphView.getViewport().setScrollable(true);
+
+// activate horizontal and vertical zooming and scrolling
+        graphView.getViewport().setScalableY(true);
+
+// activate vertical scrolling
+        graphView.getViewport().setScrollableY(true);
 
 
 
@@ -403,6 +418,7 @@ public class WeightProgressFragment extends Fragment {
                     graphView.getViewport().setMinX(dp[0].getX());
                     graphView.getViewport().setMaxX(dp[index - 1].getX());
                     graphView.getViewport().setXAxisBoundsManual(true);
+                    graphView.onDataChanged(true, false);
 
                 }
 
