@@ -2,13 +2,13 @@ package com.cuyer.calitracker.Model;
 
 public class PointValue {
     long xValue;
-    int yValue;
+    float yValue;
 
 
     public PointValue() {
     }
 
-    public PointValue(long xValue, int yValue) {
+    public PointValue(long xValue, float yValue) {
         this.xValue = xValue;
         this.yValue = yValue;
     }
@@ -17,7 +17,7 @@ public class PointValue {
         return xValue;
     }
 
-    public int getyValue() {
+    public float getyValue() {
         return yValue;
     }
 }

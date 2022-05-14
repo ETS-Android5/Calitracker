@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,6 +49,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -83,9 +85,10 @@ public class WeightProgressFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_weight_progress, container,
                 false);
 
+        TextView youLostTV = (TextView)view.findViewById(R.id.you_lost_TV);
 
 
-        FloatingActionButton floatingActionButton = (FloatingActionButton) view
+                FloatingActionButton floatingActionButton = (FloatingActionButton) view
                 .findViewById(R.id.add_weight_floatingActionButton);
         FloatingActionButton floatingDeleteActionButton = (FloatingActionButton) view
                 .findViewById(R.id.delete_weight_floatingActionButton);
@@ -253,10 +256,16 @@ public class WeightProgressFragment extends Fragment {
                 final View view = inflater.inflate(R.layout.add_weight_layout,
                         null, false);
 
+                InputFilter[] filterArray = new InputFilter[1];
+                filterArray[0] = new InputFilter.LengthFilter(6);
+
                 final EditText weightEditText = (EditText) view
                         .findViewById(R.id.WeightEditTextNumberDecimal);
                 final EditText dateEditText = (EditText) view
                         .findViewById(R.id.WeightDateEditTextDate);
+
+                weightEditText.setFilters(filterArray);
+
 
 
                 DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -314,7 +323,7 @@ public class WeightProgressFragment extends Fragment {
                                     try {
                                         Date date = df.parse(dateEditText.getText().toString());
                                         long x = date.getTime();
-                                        int y = Integer.parseInt(weightEditText.getText().toString());
+                                        float y = Float.parseFloat(weightEditText.getText().toString());
                                         PointValue pointValue = new PointValue(x, y);
                                         reference.child(id).child(randomId).setValue(pointValue);
                                         linearLayout.setVisibility(View.VISIBLE);
@@ -349,13 +358,29 @@ public class WeightProgressFragment extends Fragment {
                 for (DataSnapshot myDataSnapshot : snapshot.getChildren()) {
                     PointValue pointValue = myDataSnapshot.getValue(PointValue.class);
                     dp[index] = new DataPoint(pointValue.getxValue(), pointValue.getyValue());
-                    String str1 = Integer.toString(pointValue.getyValue());
+                    String str1 = Float.toString(pointValue.getyValue());
                     String str2 = df.format(new Date(pointValue.getxValue()));
                     linearLayout.addView(createTextView(str1, str2));
                     index++;
 
                 }
 
+                DecimalFormat df = new DecimalFormat("#.##");
+                youLostTV.bringToFront();
+                if(index == 0){
+                    youLostTV.setText("You have lost/gained 0 " + EmailAndPass.metric );
+                } else if(index == 1){
+                    youLostTV.setText("You have lost/gained 0 " + EmailAndPass.metric );
+                } else if(index > 1) {
+                    if (dp[0].getY() - dp[index-1].getY() >= 0) {
+                        float lost = (float) (dp[0].getY() - dp[index-1].getY());
+                        youLostTV.setText("You have lost " + df.format(lost) + " " + EmailAndPass.metric);
+                    }else{
+                        float gained = (float) -(dp[0].getY() - dp[index-1].getY());
+                        youLostTV.setText("You have gained " + df.format(gained) + " " + EmailAndPass.metric);
+                    }
+
+                }
 
 
 
