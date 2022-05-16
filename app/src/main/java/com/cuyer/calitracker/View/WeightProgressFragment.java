@@ -406,6 +406,10 @@ public class WeightProgressFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
+
+
+
         });
 
 

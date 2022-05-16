@@ -4,8 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -79,6 +83,182 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
         SignUpLastName = findViewById(R.id.last_name_editbox);
         SignUpDateOfBirth = findViewById(R.id.date_editbox);
         GoBackArrow = findViewById(R.id.go_back_arrow);
+
+
+
+        SignUpLastName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!TextUtils.isEmpty(SignUpLastName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpMail.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpPass.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpDateOfBirth.getText().toString())
+                        && privacyPolicyCheckBox.isChecked()) {
+                    SignUpButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                    SignUpButton.setTextColor(Color.WHITE);
+
+                }else {
+                    SignUpButton.setBackgroundColor(Color.WHITE);
+                    SignUpButton.setTextColor(Color.parseColor("#494949"));
+
+                }
+
+            }
+        });
+
+        SignUpName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!TextUtils.isEmpty(SignUpLastName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpMail.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpPass.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpDateOfBirth.getText().toString())
+                        && privacyPolicyCheckBox.isChecked()) {
+                    SignUpButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                    SignUpButton.setTextColor(Color.WHITE);
+
+                }else {
+                    SignUpButton.setBackgroundColor(Color.WHITE);
+                    SignUpButton.setTextColor(Color.parseColor("#494949"));
+
+                }
+
+            }
+        });
+
+        SignUpMail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!TextUtils.isEmpty(SignUpLastName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpMail.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpPass.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpDateOfBirth.getText().toString())
+                        && privacyPolicyCheckBox.isChecked()) {
+                    SignUpButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                    SignUpButton.setTextColor(Color.WHITE);
+
+                }else {
+                    SignUpButton.setBackgroundColor(Color.WHITE);
+                    SignUpButton.setTextColor(Color.parseColor("#494949"));
+
+                }
+
+            }
+        });
+
+        SignUpPass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!TextUtils.isEmpty(SignUpLastName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpName.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpMail.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpPass.getText().toString())
+                        &&!TextUtils.isEmpty(SignUpDateOfBirth.getText().toString())
+                        && privacyPolicyCheckBox.isChecked()) {
+                    SignUpButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                    SignUpButton.setTextColor(Color.WHITE);
+
+                }else {
+                    SignUpButton.setBackgroundColor(Color.WHITE);
+                    SignUpButton.setTextColor(Color.parseColor("#494949"));
+
+                }
+
+            }
+        });
+
+
+                SignUpDateOfBirth.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        if (!TextUtils.isEmpty(SignUpLastName.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpName.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpMail.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpPass.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpDateOfBirth.getText().toString())
+                                && privacyPolicyCheckBox.isChecked()) {
+                            SignUpButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                            SignUpButton.setTextColor(Color.WHITE);
+
+                        }else {
+                            SignUpButton.setBackgroundColor(Color.WHITE);
+                            SignUpButton.setTextColor(Color.parseColor("#494949"));
+
+                        }
+
+                    }
+                });
+
+                privacyPolicyCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                        if(!TextUtils.isEmpty(SignUpLastName.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpName.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpMail.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpPass.getText().toString())
+                                &&!TextUtils.isEmpty(SignUpDateOfBirth.getText().toString())
+                                && isChecked){
+                            SignUpButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                            SignUpButton.setTextColor(Color.WHITE);
+
+                        }else{
+                            SignUpButton.setBackgroundColor(Color.WHITE);
+                            SignUpButton.setTextColor(Color.parseColor("#494949"));
+                        }
+                    }
+                });
+
+
+
+
+
+
+
+
 
 
 
@@ -185,18 +365,6 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                 Toast.makeText(getApplicationContext(),"Please provide data",
                         Toast.LENGTH_SHORT).show();
 
-
-
-
-
-
-
-
-
-
-
-
-                
 
             }
 

@@ -12,13 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
+        <androidx.cardview.widget.CardView
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:elevation="8dp"
             android:orientation="horizontal"
+            app:cardBackgroundColor="#1D1D1B"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -26,7 +30,8 @@
                 android:id="@+id/infoImageView"
                 android:layout_width="41dp"
                 android:layout_height="43dp"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="10dp"
                 android:src="@drawable/ic_outline_info_24" />
 
             <TextView
@@ -39,7 +44,7 @@
                 android:shadowDy="-4"
                 android:shadowRadius="2"
                 android:text="BASIC CALISTHENICS PROGRESSION" />
-        </FrameLayout>
+        </androidx.cardview.widget.CardView>
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"

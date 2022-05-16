@@ -1,13 +1,18 @@
 package com.cuyer.calitracker.View;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -69,17 +74,81 @@ public class LogIn extends AppCompatActivity {
             return false;
         });
 
+
+
+        LogInMail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!TextUtils.isEmpty(LogInMail.getText().toString()) && !TextUtils.isEmpty(LogInPass.getText().toString())) {
+                    LogInButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                    LogInButton.setTextColor(Color.WHITE);
+
+                }else {
+                    LogInButton.setBackgroundColor(Color.WHITE);
+                    LogInButton.setTextColor(Color.parseColor("#494949"));
+
+                }
+
+            }
+        });
+
+
+        LogInPass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                if (!TextUtils.isEmpty(LogInMail.getText().toString()) && !TextUtils.isEmpty(LogInPass.getText().toString())) {
+                    LogInButton.setBackgroundColor(Color.BLACK);// set here your backgournd to button
+                    LogInButton.setTextColor(Color.WHITE);
+
+                }else {
+                    LogInButton.setBackgroundColor(Color.WHITE);
+                    LogInButton.setTextColor(Color.parseColor("#494949"));
+
+                }
+
+            }
+        });
+
+
+
+
+
+
+
         LogInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String email = LogInMail.getText().toString();
                 String pass = LogInPass.getText().toString();
+
 
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(getApplicationContext(),
                             "Please enter your E-mail address",Toast.LENGTH_SHORT).show();
                 }
-                if(TextUtils.isEmpty(pass)){
+                else if(TextUtils.isEmpty(pass)){
                     Toast.makeText(getApplicationContext(),
                             "Please provide password",Toast.LENGTH_SHORT).show();
                 }
@@ -145,6 +214,7 @@ public class LogIn extends AppCompatActivity {
         });
     }
 
+
     // hide keyboard after clicking outside of editbox
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -154,5 +224,6 @@ public class LogIn extends AppCompatActivity {
         }
         return super.dispatchTouchEvent(ev);
     }
+
 
 }
