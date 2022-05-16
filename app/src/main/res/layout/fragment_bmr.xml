@@ -7,7 +7,6 @@
     tools:context="com.cuyer.calitracker.View.BmrFragment">
 
 
-
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
@@ -48,9 +47,9 @@
                 android:fontFamily="@font/roboto_bold"
                 android:hint="@string/age"
                 android:imeOptions="actionDone"
+                android:importantForAutofill="no"
                 android:inputType="number"
-                android:textColor="#FFFFFFFF"
-                android:importantForAutofill="no" />
+                android:textColor="#FFFFFFFF" />
 
             <EditText
                 android:id="@+id/heightCmEditText"
@@ -65,9 +64,9 @@
                 android:fontFamily="@font/roboto_bold"
                 android:hint="@string/height"
                 android:imeOptions="actionDone"
+                android:importantForAutofill="no"
                 android:inputType="number"
-                android:textColor="#FFFFFFFF"
-                android:importantForAutofill="no" />
+                android:textColor="#FFFFFFFF" />
 
             <EditText
                 android:id="@+id/weightKgEditText"
@@ -82,9 +81,9 @@
                 android:fontFamily="@font/roboto_bold"
                 android:hint="WEIGHT"
                 android:imeOptions="actionDone"
+                android:importantForAutofill="no"
                 android:inputType="number"
-                android:textColor="#FFFFFFFF"
-                android:importantForAutofill="no" />
+                android:textColor="#FFFFFFFF" />
 
             <Button
                 android:id="@+id/calculateBmrButton"
@@ -96,10 +95,10 @@
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="#000000"
                 android:fontFamily="@font/roboto_bold"
-                android:text="@string/calculate"
                 android:shadowDx="-4"
                 android:shadowDy="-4"
                 android:shadowRadius="2"
+                android:text="@string/calculate"
                 app:cornerRadius="60dp" />
 
             <TextView
@@ -123,7 +122,6 @@
 
 
     </ScrollView>
-
 
 
 </FrameLayout>

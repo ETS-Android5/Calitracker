@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.cuyer.calitracker.Controller.BMRCalcUtil;
 import com.cuyer.calitracker.Model.EmailAndPass;
 import com.cuyer.calitracker.R;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
