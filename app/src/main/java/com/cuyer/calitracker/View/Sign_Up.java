@@ -29,6 +29,7 @@ import com.cuyer.calitracker.Model.EmailAndPass;
 import com.cuyer.calitracker.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -424,6 +425,8 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                                         user1.put("Email", email);
                                         user1.put("DateOfBirth", dateOfBirth);
                                         user1.put("PrivacyPolicyAccepted", true);
+                                        user1.put("LockScreen",false);
+                                        user1.put("Notifications", false);
                                         db.collection("users").document(user.getUid())
                                                 .set(user1);
 
@@ -439,6 +442,9 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
 
             }
         });
+
+
+
 
 
     }
