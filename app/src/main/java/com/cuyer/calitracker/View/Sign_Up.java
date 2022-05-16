@@ -427,6 +427,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                                         user1.put("PrivacyPolicyAccepted", true);
                                         user1.put("LockScreen",false);
                                         user1.put("Notifications", false);
+                                        user1.put("Metric", "Kg");
                                         db.collection("users").document(user.getUid())
                                                 .set(user1);
 
