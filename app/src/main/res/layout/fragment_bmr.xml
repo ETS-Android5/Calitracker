@@ -62,7 +62,7 @@
                 android:background="@drawable/border"
                 android:ems="10"
                 android:fontFamily="@font/roboto_bold"
-                android:hint="@string/height"
+                android:hint="HEIGHT"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"

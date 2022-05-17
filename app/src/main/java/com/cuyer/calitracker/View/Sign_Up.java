@@ -428,6 +428,7 @@ FirebaseFirestore db = FirebaseFirestore.getInstance();
                                         user1.put("LockScreen",false);
                                         user1.put("Notifications", false);
                                         user1.put("Metric", "Kg");
+                                        user1.put("Gender", "Prefer not to say");
                                         db.collection("users").document(user.getUid())
                                                 .set(user1);
 

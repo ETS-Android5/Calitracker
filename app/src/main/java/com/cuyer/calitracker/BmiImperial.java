@@ -1,4 +1,4 @@
-package com.cuyer.calitracker.View;
+package com.cuyer.calitracker;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -15,11 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cuyer.calitracker.Controller.BMICalcUtil;
-import com.cuyer.calitracker.R;
 
 
-public class BmiFragment extends Fragment {
-
+public class BmiImperial extends Fragment {
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -27,14 +25,14 @@ public class BmiFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_bmi, container, false);
+        View view = inflater.inflate(R.layout.fragment_bmi_imperial, container, false);
 
-        Button calculateButton = (Button)view.findViewById(R.id.calculateBmiButton);
-        EditText heightEditText = (EditText) view.findViewById(R.id.heightCmEditText);
-        EditText weightEditText = (EditText) view.findViewById(R.id.weightKgEditText);
-        TextView bmiTextView = (TextView) view.findViewById(R.id.BmiTextView);
-        TextView bmi2TextView = (TextView) view.findViewById(R.id.BmiHealthTextView);
-
+        Button calculateButton = (Button)view.findViewById(R.id.calculateBmiButtonImperial);
+        EditText heightEditText = (EditText) view.findViewById(R.id.heightFtEditText);
+        EditText height2EditText = (EditText) view.findViewById(R.id.heightInEditText);
+        EditText weightEditText = (EditText) view.findViewById(R.id.weightPoundsEditText);
+        TextView bmiTextView = (TextView) view.findViewById(R.id.BmiTextViewImperial);
+        TextView bmi2TextView = (TextView) view.findViewById(R.id.BmiHealthTextViewImperial);
 
 
 
@@ -43,15 +41,15 @@ public class BmiFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if(weightEditText.length() == 0 || heightEditText.length() == 0){
+                if(weightEditText.length() == 0 || heightEditText.length() == 0  || height2EditText.length() == 0){
                     Toast.makeText(getActivity(),
-                            "Populate Weight and Height to Calculate BMI", Toast.LENGTH_SHORT)
+                                    "Populate Weight and Height to Calculate BMI", Toast.LENGTH_SHORT)
                             .show();
                 }else{
-                    double heightInCms = Double.parseDouble(heightEditText.getText().toString());
-                    double weightInKgs = Double.parseDouble(weightEditText.getText().toString());
-                    double bmi = BMICalcUtil.getInstance().calculateBMIMetric(heightInCms,
-                            weightInKgs);
+                    double heightInFt = Double.parseDouble(heightEditText.getText().toString());
+                    double heightInIn = Double.parseDouble(height2EditText.getText().toString());
+                    double weightInPounds = Double.parseDouble(weightEditText.getText().toString());
+                    double bmi = BMICalcUtil.getInstance().calculateBMIImperial(heightInFt,heightInIn,weightInPounds);
                     displayBMI(bmi);
                 }
 
@@ -76,6 +74,7 @@ public class BmiFragment extends Fragment {
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
                 weightEditText.setBackgroundResource(R.drawable.border);
+                height2EditText.setBackgroundResource(R.drawable.border);
                 heightEditText.setBackgroundResource(R.drawable.border_black);
 
                 return false;
@@ -88,6 +87,19 @@ public class BmiFragment extends Fragment {
 
                 weightEditText.setBackgroundResource(R.drawable.border_black);
                 heightEditText.setBackgroundResource(R.drawable.border);
+                height2EditText.setBackgroundResource(R.drawable.border);
+
+                return false;
+            }
+        });
+
+        height2EditText.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                weightEditText.setBackgroundResource(R.drawable.border);
+                heightEditText.setBackgroundResource(R.drawable.border);
+                height2EditText.setBackgroundResource(R.drawable.border_black);
 
                 return false;
             }
@@ -96,12 +108,6 @@ public class BmiFragment extends Fragment {
 
 
 
-
-
-
-        // Inflate the layout for this fragment
         return view;
     }
-
-
 }

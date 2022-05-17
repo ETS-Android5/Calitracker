@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/BMItextView22Imperial"
                 style="@style/fill_box_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,25 +33,31 @@
                 android:shadowRadius="2"
                 android:text="This calculator provides body mass index (BMI) and the corresponding BMI weight status category" />
 
-            <EditText
-                android:id="@+id/heightCmEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/border"
-                android:ems="10"
-                android:fontFamily="@font/roboto_bold"
-                android:hint="HEIGHT"
-                android:imeOptions="actionDone"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textColor="#FFFFFFFF" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/heightFtEditText"
+                    style="@style/WeightEditTextStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="@string/height" />
+
+                <EditText
+                    android:id="@+id/heightInEditText"
+                    style="@style/WeightEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="INCHES"
+                    android:inputType="number" />
+            </LinearLayout>
 
             <EditText
-                android:id="@+id/weightKgEditText"
+                android:id="@+id/weightPoundsEditText"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
@@ -68,7 +74,7 @@
                 android:importantForAutofill="no" />
 
             <Button
-                android:id="@+id/calculateBmiButton"
+                android:id="@+id/calculateBmiButtonImperial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -84,7 +90,7 @@
                 app:cornerRadius="60dp" />
 
             <TextView
-                android:id="@+id/BmiTextView"
+                android:id="@+id/BmiTextViewImperial"
                 style="@style/fill_box_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,7 +98,7 @@
                 android:visibility="invisible" />
 
             <TextView
-                android:id="@+id/BmiHealthTextView"
+                android:id="@+id/BmiHealthTextViewImperial"
                 style="@style/fill_box_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

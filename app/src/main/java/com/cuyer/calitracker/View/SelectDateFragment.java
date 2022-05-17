@@ -30,7 +30,11 @@ public class SelectDateFragment extends DialogFragment implements DatePickerDial
         int yy = calendar.get(Calendar.YEAR);
         int mm = calendar.get(Calendar.MONTH);
         int dd = calendar.get(Calendar.DAY_OF_MONTH);
-        return new DatePickerDialog(getActivity(), this, yy, mm, dd);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), this, yy, mm, dd);
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis() - 568025136000L);
+
+
+        return datePickerDialog;
     }
 
     public void onDateSet(DatePicker view, int yy, int mm, int dd) {
