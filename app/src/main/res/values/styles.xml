@@ -222,5 +222,20 @@
         <item name="android:textColor">#FFFFFFFF</item>
     </style>
 
+    <style name="editBoxExercises2" parent="editBoxExercises">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:digits">012345</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:importantForAutofill">no</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:shadowDx">-4</item>
+        <item name="android:shadowDy">-4</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
 
 </resources>

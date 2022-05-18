@@ -89,188 +89,189 @@
                 tools:ignore="RedundantDescriptionCheck" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginTop="30dp"
-                android:gravity="start"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/exercisesNameTextView">
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/series1"
-                        style="@style/editBoxExercises"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="012345"
-                        android:imeOptions="actionDone"
-                        android:importantForAutofill="no"
-                        android:inputType="number"
+                        style="@style/editBoxExercises2"
 
-                        android:maxLength="1"
-                        android:shadowDx="-4"
-                        android:shadowDy="-4"
-                        android:shadowRadius="2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:id="@+id/seriesTextView"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+
+                        android:gravity="center"
                         android:shadowDx="-4"
                         android:shadowDy="-4"
                         android:shadowRadius="2"
-
                         android:text="@string/_5"
+                        android:textColor="#FFFFFF"
                         tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/series2"
                         style="@style/editBoxExercises"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:digits="012345"
+                        android:gravity="center|right"
                         android:imeOptions="actionDone"
                         android:importantForAutofill="no"
                         android:inputType="number"
                         android:maxLength="1"
                         android:shadowDx="-4"
-                        android:shadowDy="-4"
 
+                        android:shadowDy="-4"
                         android:shadowRadius="2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:id="@+id/seriesTextView2"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:shadowDx="-4"
                         android:shadowDy="-4"
                         android:shadowRadius="2"
                         android:text="@string/_5"
+                        android:textColor="#FFFFFF"
                         tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/series3"
-                        style="@style/editBoxExercises"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
+                        style="@style/editBoxExercises2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:digits="012345"
+                        android:gravity="center|right"
                         android:imeOptions="actionDone"
                         android:importantForAutofill="no"
                         android:inputType="number"
                         android:maxLength="1"
                         android:shadowDx="-4"
-                        android:shadowDy="-4"
 
+                        android:shadowDy="-4"
                         android:shadowRadius="2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:id="@+id/seriesTextView5"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:shadowDx="-4"
                         android:shadowDy="-4"
                         android:shadowRadius="2"
                         android:text="@string/_5"
+                        android:textColor="#FFFFFF"
                         tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/series4"
-                        style="@style/editBoxExercises"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
+                        style="@style/editBoxExercises2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:digits="012345"
+                        android:gravity="center|right"
                         android:imeOptions="actionDone"
                         android:importantForAutofill="no"
                         android:inputType="number"
                         android:maxLength="1"
                         android:shadowDx="-4"
-                        android:shadowDy="-4"
 
+                        android:shadowDy="-4"
                         android:shadowRadius="2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:id="@+id/seriesTextView4"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:shadowDx="-4"
                         android:shadowDy="-4"
                         android:shadowRadius="2"
                         android:text="@string/_5"
+                        android:textColor="#FFFFFF"
                         tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/series5"
-                        style="@style/editBoxExercises"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
+                        style="@style/editBoxExercises2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:digits="012345"
+                        android:gravity="center|right"
                         android:imeOptions="actionDone"
                         android:importantForAutofill="no"
                         android:inputType="number"
                         android:maxLength="1"
                         android:shadowDx="-4"
-                        android:shadowDy="-4"
 
+                        android:shadowDy="-4"
                         android:shadowRadius="2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:id="@+id/seriesTextView3"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:shadowDx="-4"
                         android:shadowDy="-4"
                         android:shadowRadius="2"
                         android:text="@string/_5"
+                        android:textColor="#FFFFFF"
                         tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
