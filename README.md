@@ -21,3 +21,4 @@ Tech Stack:
 * AdMob
 * GraphView
 * RecyclerView
+* Fragments
