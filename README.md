@@ -12,3 +12,12 @@ Features:
 - BMI and BMR calculator
 
 App is connected to the Firebase, therefore user is able to register, log in, push notifications are enabled and it is integrated with Firestore database and real-time data base
+
+
+Tech Stack: 
+* Java
+* Android Studio
+* Firebase
+* AdMob
+* GraphView
+* RecyclerView
