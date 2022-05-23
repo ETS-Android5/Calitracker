@@ -11,7 +11,9 @@ Features:
 - Timer
 - BMI and BMR calculator
 
-App is connected to the Firebase, therefore user is able to register, log in, push notifications are enabled and it is integrated with Firestore database and real-time data base
+App is connected to the Firebase, therefore user is able to register, log in, push notifications are enabled and it is integrated with Firestore database and real-time database.
+
+Application has been published to Google Play Store: https://play.google.com/store/apps/details?id=com.cuyer.calitracker&gl=PL
 
 
 Tech Stack: 
